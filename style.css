@@ -106,7 +106,7 @@ nav a:hover {
 .hero h1 {
   position: relative;
   z-index: 1;
-  font-family: var(--font-display);
+  font-family: var('Space Grotesk', sans-serif);
   font-size: clamp(4rem, 12vw, 10rem);
   line-height: 0.92;
   text-transform: uppercase;
