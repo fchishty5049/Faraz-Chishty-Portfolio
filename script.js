@@ -40,7 +40,7 @@
             <p class="project-type">Robotics / Mechanical System</p>
             <h3>Project 1 Title</h3>
             <p>Briefly describe the robot, mechanism, prototype, or engineering system you built.</p>
-            <a href="#project-1">View Details</a>
+            <a href="#Surfboard Propulsion System">View Details</a>
           </div>
         </article>
 
@@ -50,7 +50,7 @@
             <p class="project-type">Design / CAD / Analysis</p>
             <h3>Project 2 Title</h3>
             <p>Describe the design objective, technical challenge, and what you created or improved.</p>
-            <a href="#project-2">View Details</a>
+            <a href="#Autonomous Targetting System">View Details</a>
           </div>
         </article>
 
@@ -60,7 +60,7 @@
             <p class="project-type">Prototype / Testing</p>
             <h3>Project 3 Title</h3>
             <p>Summarize the prototype, hardware, testing process, and final result.</p>
-            <a href="#project-3">View Details</a>
+            <a href="#Dice Rolling Robot">View Details</a>
           </div>
         </article>
 
@@ -70,7 +70,7 @@
             <p class="project-type">Automation / Engineering Build</p>
             <h3>Project 4 Title</h3>
             <p>Explain the engineering problem, your approach, and the outcome of the build.</p>
-            <a href="#project-4">View Details</a>
+            <a href="#Motor Coaster">View Details</a>
           </div>
         </article>
       </div>
