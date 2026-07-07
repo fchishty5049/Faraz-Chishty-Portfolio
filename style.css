@@ -261,30 +261,31 @@ nav a:hover {
 .static-gif {
   grid-row: 1;
   opacity: 1;
-  transition: none;
-  z-index: 0;
+  transition: opacity 0.2s ease;
 }
 .static-gif.left {
   grid-column: 1;
-  transform: translateX(-10px);
 }
 .static-gif.right {
   grid-column: 3;
-  transform: translateX(10px);
 }
 .animated-gif {
   grid-row: 1;
-  opacity: 1;
-  transition: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
   z-index: 2;
+}
+.project-card:hover .static-gif {
+  opacity: 0;
+}
+.project-card:hover .animated-gif {
+  opacity: 1;
 }
 .animated-gif.left {
   grid-column: 1;
-  transform: translateX(-10px);
 }
 .animated-gif.right {
   grid-column: 3;
-  transform: translateX(10px);
 }
 
 .tag {
