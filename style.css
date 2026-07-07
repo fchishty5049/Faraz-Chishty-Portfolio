@@ -240,7 +240,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
   height: 280px;
-  overflow: hidden;
+  overflow: visible;
   border-bottom: 1px solid var(--line);
   position: relative;
   isolation: isolate;
@@ -257,11 +257,14 @@ nav a:hover {
   border-left: 1px solid rgba(255,255,255,0.08);
   border-right: 1px solid rgba(255,255,255,0.08);
   z-index: 1;
+  position: relative;
 }
 .static-gif {
   grid-row: 1;
   opacity: 1;
   transition: opacity 0.2s ease;
+  position: relative;
+  z-index: 0;
 }
 .static-gif.left {
   grid-column: 1;
@@ -274,6 +277,10 @@ nav a:hover {
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 2;
+  position: relative;
+  transform: translateX(0);
+  filter: saturate(1.1) hue-rotate(0deg) brightness(0.85) contrast(1.1);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
 }
 .project-card:hover .static-gif {
   opacity: 0;
@@ -283,9 +290,11 @@ nav a:hover {
 }
 .animated-gif.left {
   grid-column: 1;
+  margin-right: -18%;
 }
 .animated-gif.right {
   grid-column: 3;
+  margin-left: -18%;
 }
 
 .tag {
