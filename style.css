@@ -238,7 +238,7 @@ nav a:hover {
 /* Three-part media for project postcards: center image + two side gifs */
 .project-media {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1.3fr 1.2fr 1.3fr;
   height: 280px;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
