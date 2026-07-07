@@ -243,6 +243,7 @@ nav a:hover {
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   position: relative;
+  isolation: isolate;
 }
 .project-media img {
   width: 100%;
@@ -252,20 +253,33 @@ nav a:hover {
 }
 .main-img {
   grid-column: 2;
+  grid-row: 1;
   border-left: 1px solid rgba(255,255,255,0.08);
   border-right: 1px solid rgba(255,255,255,0.08);
+  z-index: 1;
 }
 .static-gif {
-  display: block;
+  grid-row: 1;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+.static-gif.left {
+  grid-column: 1;
+}
+.static-gif.right {
+  grid-column: 3;
 }
 .animated-gif {
-  display: none;
+  grid-row: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 2;
 }
 .project-card:hover .static-gif {
-  display: none;
+  opacity: 0;
 }
 .project-card:hover .animated-gif {
-  display: block;
+  opacity: 1;
 }
 .animated-gif.left {
   grid-column: 1;
