@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mechanical Engineering Projects</title>
+  <title>Faraz Chishty | Engineering & Robotics Portfolio</title>
+
+  <!-- Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="hero">
     <nav class="nav">
@@ -17,7 +24,8 @@
       <p class="eyebrow">Portfolio</p>
       <h2>Hi! I'm Faraz Chishty</h2>
       <p>
-       I'm a mechanical engineer with a passion for developing robotic systems.
+        I'm a mechanical engineer with a passion for developing robotic systems,
+        prototyping new ideas, and turning concepts into functional hardware.
       </p>
     </div>
   </header>
@@ -31,7 +39,13 @@
 
       <div class="project-grid">
         <article class="project-card">
-          <div class="project-image placeholder">Project 1 Image</div>
+          <div class="project-image">
+            <div class="project-gallery">
+              <img src="images/robot_motion_still.png" alt="">
+              <img src="images/dice_bot_nobg.png" alt="">
+              <img src="images/robot_diceroll_still.png" alt="">
+            </div>
+          </div>
           <div class="project-info">
             <h3>Surfboard Propulsion System</h3>
             <p>Short description of the project, the engineering problem, and the final result.</p>
@@ -40,28 +54,51 @@
         </article>
 
         <article class="project-card">
-          <div class="project-image placeholder">Project 2 Image</div>
+          <div class="project-image project-image-two">
+            <div class="project-gallery">
+              <img src="images/robot_motion_still.png" alt="">
+              <img src="images/robot_diceroll_still.png" alt="">
+              <img src="images/coaster_bottom.png" alt="">
+            </div>
+            <span>Autonomous Targeting</span>
+          </div>
           <div class="project-info">
-            <h3>Project 2 Title</h3>
-            <p>Short description of the project, design goals, tools used, and outcome.</p>
+            <h3>Autonomous Targeting System</h3>
+            <p>Mechanism design and iterative prototyping for a compact targeting platform.</p>
             <a href="#project-2">Read More</a>
           </div>
         </article>
 
-        <article class="project-card">
-          <div class="project-image placeholder">Project 3 Image</div>
+        <article class="project-card dice-card">
+          <div class="project-image project-image-three">
+            <div class="project-gallery dice-gallery">
+              <img class="gallery-left-still" src="images/robot_motion_still.png" alt="">
+              <img class="gallery-left-anim" src="images/robot_motion.gif" alt="">
+              <img class="gallery-center" src="images/dice_bot_nobg.png" alt="">
+              <img class="gallery-right-still" src="images/robot_diceroll_still.png" alt="">
+              <img class="gallery-right-anim" src="images/robot_diceroll.gif" alt="">
+            </div>
+            <span>Dice Rolling Robot</span>
+          </div>
           <div class="project-info">
-            <h3>Project 3 Title</h3>
-            <p>Short description of the prototype, system, or analysis completed.</p>
+            <h3>Dice Rolling Robot</h3>
+            <p>Embedded controls, sensing, and mechanical integration for a playful automation build.</p>
             <a href="#project-3">Read More</a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-image placeholder">Project 4 Image</div>
+          <div class="project-image project-image-four">
+            <div class="project-gallery">
+              <img src="images/coaster_bottom.png" alt="">
+              <img src="images/robot_motion_still.png" alt="">
+              <img src="images/robot_diceroll_still.png" alt="">
+            </div>
+            <span>Motor Coaster</span>
+          </div>
           <div class="project-info">
-            <h3>Project 4 Title</h3>
-            <p>Short description of the design, build, testing process, and results.</p>
+            <h3>Motor Coaster</h3>
+            <p>Prototype development, fabrication, and validation for a custom motion-driven device.</p>
             <a href="#project-4">Read More</a>
           </div>
         </article>
@@ -70,41 +107,41 @@
 
     <section class="details-section">
       <article id="project-1" class="project-detail">
-        <h2>Project 1 Title</h2>
-        <p><strong>Overview:</strong> Replace this with a brief explanation of what the project was and what problem it solved.</p>
-        <p><strong>Tools Used:</strong> SolidWorks, MATLAB, ANSYS, 3D Printing, Machining, or other tools.</p>
-        <p><strong>Process:</strong> Explain your design process, calculations, CAD modeling, prototyping, and testing.</p>
-        <p><strong>Result:</strong> Describe the final outcome, performance, improvements, or what you learned.</p>
+        <h2>Surfboard Propulsion System</h2>
+        <p><strong>Overview:</strong> A compact propulsion concept designed to explore efficient motion for a surfboard-based platform.</p>
+        <p><strong>Tools Used:</strong> SolidWorks, Arduino, prototyping tools, and basic fabrication methods.</p>
+        <p><strong>Process:</strong> The design focused on balancing compact packaging, mechanical reliability, and testable performance.</p>
+        <p><strong>Result:</strong> The project produced a practical proof-of-concept that highlighted key design tradeoffs for future iterations.</p>
       </article>
 
       <article id="project-2" class="project-detail">
-        <h2>Project 2 Title</h2>
-        <p><strong>Overview:</strong> Replace this with the project objective and background.</p>
-        <p><strong>Tools Used:</strong> Add the software, machines, and analysis tools used.</p>
-        <p><strong>Process:</strong> Describe the design decisions and engineering work completed.</p>
-        <p><strong>Result:</strong> Add measurable results, final performance, or lessons learned.</p>
+        <h2>Autonomous Targeting System</h2>
+        <p><strong>Overview:</strong> A mechanical system built to support alignment and targeting through controlled motion.</p>
+        <p><strong>Tools Used:</strong> CAD modeling, 3D printing, analysis tools, and iterative prototyping.</p>
+        <p><strong>Process:</strong> The work emphasized mechanism layout, structural stability, and refinement based on testing feedback.</p>
+        <p><strong>Result:</strong> The final build improved repeatability and demonstrated the value of rapid iteration.</p>
       </article>
 
       <article id="project-3" class="project-detail">
-        <h2>Project 3 Title</h2>
-        <p><strong>Overview:</strong> Replace this with your project summary.</p>
-        <p><strong>Tools Used:</strong> Add CAD, simulation, programming, or manufacturing tools.</p>
-        <p><strong>Process:</strong> Explain your prototype, testing, analysis, or build process.</p>
-        <p><strong>Result:</strong> Describe the project outcome and what made it successful.</p>
+        <h2>Dice Rolling Robot</h2>
+        <p><strong>Overview:</strong> An automation platform that combines motion, sensing, and physical interaction in a compact form.</p>
+        <p><strong>Tools Used:</strong> Microcontrollers, sensors, CAD, and assembly tools.</p>
+        <p><strong>Process:</strong> The project integrated electronics and hardware while refining the motion logic through testing.</p>
+        <p><strong>Result:</strong> The completed robot delivered a reliable, repeatable experience and helped sharpen mechatronics skills.</p>
       </article>
 
       <article id="project-4" class="project-detail">
-        <h2>Project 4 Title</h2>
-        <p><strong>Overview:</strong> Replace this with a short explanation of the project.</p>
-        <p><strong>Tools Used:</strong> Add the tools and methods used for this project.</p>
-        <p><strong>Process:</strong> Explain how the project was designed, manufactured, or tested.</p>
-        <p><strong>Result:</strong> Add the final outcome, testing results, or reflection.</p>
+        <h2>Motor Coaster</h2>
+        <p><strong>Overview:</strong> A hands-on build focused on translating a creative concept into a working prototype.</p>
+        <p><strong>Tools Used:</strong> Fabrication tools, rapid prototyping, and performance testing.</p>
+        <p><strong>Process:</strong> The workflow emphasized design validation, adjustment, and practical manufacturing decisions.</p>
+        <p><strong>Result:</strong> The prototype evolved into a functional, testable demonstration of engineering problem-solving.</p>
       </article>
     </section>
   </main>
 
   <footer>
-    <p>© 2026 Mechanical Engineering Projects. Replace with your name.</p>
+    <p>© 2026 Mechanical Engineering Projects</p>
   </footer>
 
   <script src="script.js"></script>
