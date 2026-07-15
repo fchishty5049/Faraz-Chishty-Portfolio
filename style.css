@@ -293,7 +293,7 @@ a {
 }
 
 .dice-center {
-  transform: scale(1.2) translateY(-15px);
+  transform: scale(1.2) translateY(-13px);
 }
 
 .target-center {
@@ -546,21 +546,56 @@ footer {
     height: 220px;
 }
 
-.img-testing {
-    height: 220px;
+.img-winch {
+  height: 220px;
 }
+
+.img-CAD_Surfboard {
+  grid-column: 1 / -1;
+  transform: scale(0.8) translateY(-20px);
+  height: 370px;
+}
+
+.img-CAD_Paddle {
+height: 220px;
+transform: translateY(-50px) translateX(30px);
+}
+
+.img-Stress_Paddle {
+  height: 200px;
+  transform: scaleX(0.7) translateY(-40px);
+}
+
+.img-surfboard_test {
+  grid-column: 1 / -1;
+  height: 320px;
+  transform: translateY(-50px);
+}
+
+
+.project-surfboard-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.video-demo,
+.video-testing,
+.img-testing {
+    width: 100%;
+    height: 350px;   /* Adjust until you're happy */
+    border-radius: 1rem;
+}
+
+
+.img-testing{
+  
+   object-fit: cover;
+}
+
+
 
 /* Add future images like:
 .img-cad { grid-column: 1 / -1; height: 250px; }
 .img-render { height: 200px; }
 */
-
-/* LAYOUTS REMOVED */
-
-
-
-
-
-.media-layout-a .media-small {
-    height: 220px;
-}
