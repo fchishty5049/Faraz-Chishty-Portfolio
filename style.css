@@ -1,0 +1,601 @@
+/*
+  AKIRA FONT SETUP
+  Put your font file here:
+  fonts/Akira Expanded Demo.otf
+
+  The filename must match exactly.
+*/
+@font-face {
+  font-family: 'Akira';
+  src: url('./fonts/Akira Expanded Demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #050507;
+  --panel: #101014;
+  --panel-2: #17171d;
+  --text: #f4f4f6;
+  --muted: #aaaab5;
+  --red: #e50914;
+  --red-dark: #5d0208;
+  --line: rgba(255,255,255,0.12);
+  --font-display: 'Akira', Impact, Haettenschweiler, 'Arial Black', sans-serif;
+  --font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(229, 9, 20, 0.22), transparent 28rem),
+    linear-gradient(180deg, #050507 0%, #08080b 50%, #050507 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  padding: 2rem 7vw 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(229, 9, 20, 0.3), transparent 28rem),
+    linear-gradient(135deg, #08080b 0%, #0c0d12 45%, #050507 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.hero-content {
+  max-width: 720px;
+  margin: auto 0 2rem;
+}
+
+.eyebrow {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.hero-content p:last-child {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+/* PROJECTS */
+
+.projects-section {
+  padding: 5rem 7vw 3rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+  background: linear-gradient(145deg, #121217 0%, #191a22 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-left: 4px solid var(--red);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.05), transparent 35%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(229, 9, 20, 0.1) 0 1px,
+      transparent 1px 12px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(229, 9, 20, 0.65);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55), 0 0 40px rgba(229,9,20,0.24);
+}
+
+/* Image panel */
+
+.project-image {
+  position: relative;
+  height: 270px;
+  margin: 1rem 1rem 0;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1rem 1rem 0.8rem 0.8rem;
+  background:
+    linear-gradient(135deg, rgba(229, 9, 20, 0.22), transparent 60%),
+    repeating-linear-gradient(45deg, #17171f 0 14px, #101016 14px 28px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.04),
+    0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.project-gallery {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 1;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Red/dark overlay over the images */
+.project-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      115deg,
+      rgba(229,9,20,.72) 0%,
+      rgba(120,10,25,.45) 45%,
+      rgba(8,8,12,.82) 100%
+    );
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+/* Diagonal stripe overlay */
+.project-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,.05) 0px,
+      rgba(255,255,255,.05) 12px,
+      transparent 12px,
+      transparent 28px
+    );
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.project-image span {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  z-index: 5;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Shared project card GIF hover behavior
+   - Side still images show by default.
+   - Side animated GIFs fade in on card hover.
+   - The red gradient and diagonal stripe overlay fade out on card hover.
+   This is the same behavior originally used on the dice roller card,
+   now applied to every project card that uses the gallery-left/right classes.
+*/
+
+.project-card .project-gallery {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.project-card .gallery-left-still,
+.project-card .gallery-right-still,
+.project-card .gallery-center,
+.project-card .gallery-left-anim,
+.project-card .gallery-right-anim {
+  grid-row: 1;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.project-card .gallery-left-still,
+.project-card .gallery-left-anim {
+  grid-column: 1;
+}
+
+.project-card .gallery-center {
+  grid-column: 2;
+  object-fit: contain;
+  padding: 0.35rem;
+}
+
+.surf-center {
+  transform: scale(1.3) rotate(-25deg) translateX(-5px);
+}
+
+.dice-center {
+  transform: scale(1.2) translateY(-13px);
+}
+
+.target-center {
+  transform: scale(1.5) translateY(-15px);
+}
+
+.coaster-center {
+  transform: scale(1.35) translateY(-10px) translateX(-5px);
+}
+
+.project-card .gallery-right-still,
+.project-card .gallery-right-anim {
+  grid-column: 3;
+}
+
+.project-card .gallery-left-anim,
+.project-card .gallery-right-anim {
+  opacity: 0;
+}
+
+.project-card:hover .gallery-left-still,
+.project-card:hover .gallery-right-still {
+  opacity: 0;
+}
+
+.project-card:hover .gallery-left-anim,
+.project-card:hover .gallery-right-anim {
+  opacity: 1;
+}
+
+.project-card:hover .project-image::before,
+.project-card:hover .project-image::after {
+  opacity: 0;
+}
+
+/* Project text */
+
+.project-info {
+  position: relative;
+  z-index: 5;
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.project-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.15;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.project-info p {
+  color: var(--muted);
+  margin-bottom: 0.9rem;
+}
+
+.project-info a {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+/* PROJECTS PAGE HEADER */
+
+.projects-hero {
+    padding: 5rem 7vw 4rem;
+    border-bottom: 1px solid var(--line);
+
+    background:
+        radial-gradient(circle at 80% 10%, rgba(229, 9, 20, 0.3), transparent 28rem),
+        linear-gradient(135deg, #08080b 0%, #0c0d12 45%, #050507 100%);
+}
+
+.projects-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.projects-hero p:last-child {
+    color: var(--muted);
+    max-width: 700px;
+    font-size: 1.1rem;
+}
+
+.skills-section {
+    padding: 5rem 7vw;
+    border-top: 1px solid var(--line);
+    margin-top: 2rem;
+}
+
+.skills-grid {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+}
+
+.skill-card {
+    background: linear-gradient(145deg, #121217 0%, #191a22 100%);
+    border: 1px solid rgba(255,255,255,.1);
+    border-left: 4px solid var(--red);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    box-shadow: 0 16px 46px rgba(0,0,0,.35);
+}
+
+.skill-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.skill-card p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+.skill-card strong {
+    color: var(--text);
+}
+
+/* FOOTER */
+
+footer {
+  padding: 2rem 7vw;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 1.4rem 5vw 3rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 2rem;
+  }
+
+  .projects-section,
+  .details-section {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* PROJECT DETAILS PAGE */
+
+.project-details-page {
+    padding: 5rem 7vw;
+    display: grid;
+    gap: 2rem;
+}
+
+.project-details-page .project-detail {
+    padding: 2rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid var(--red);
+    border-radius: 1.2rem;
+    background: linear-gradient(145deg, #121217 0%, #191a22 100%);
+    box-shadow: 0 16px 46px rgba(0,0,0,.35);
+}
+
+.project-details-page .project-detail h2 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.project-details-page .project-detail p {
+    
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.project-banner {
+    width: 100%;
+    height: 460px;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(255,255,255,.12);
+}
+
+.surfboard-banner {
+    background-image: url('./images/surfboard_banner.gif');
+}
+
+
+/* Project Detail Layouts  Columns*/
+
+.project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Project media */
+
+.project-media {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project-media img {
+    width: 100%;
+    margin-top: 0;
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,.12);
+    object-fit: cover;
+}
+
+/* Individual image classes */
+
+.img-subsystems {
+    grid-column: 1 / -1;
+    height: 320px;
+}
+
+.img-trigger {
+    height: 220px;
+}
+
+.img-winch {
+  height: 220px;
+}
+
+.img-CAD_Surfboard {
+  grid-column: 1 / -1;
+  transform: scale(0.8) translateY(-20px);
+  height: 370px;
+}
+
+.img-CAD_Paddle {
+height: 220px;
+transform: translateY(-50px) translateX(30px);
+}
+
+.img-Stress_Paddle {
+  height: 200px;
+  transform: scaleX(0.7) translateY(-40px);
+}
+
+.img-surfboard_test {
+  grid-column: 1 / -1;
+  height: 320px;
+  transform: translateY(-50px);
+}
+
+
+.project-surfboard-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.video-demo,
+.video-testing,
+.img-testing {
+    width: 100%;
+    height: 350px;   /* Adjust until you're happy */
+    border-radius: 1rem;
+}
+
+
+.img-testing{
+  
+   object-fit: cover;
+}
+
+
+
+/* Add future images like:
+.img-cad { grid-column: 1 / -1; height: 250px; }
+.img-render { height: 200px; }
+*/
