@@ -31,9 +31,7 @@
 
             
             
-             <p> <strong>
-                Overview:
-                </strong></p>
+             <p> <strong> Overview: </strong></p>
 
             <p>Working with a team of four engineers, I helped develop a purely mechanical propulsion system designed to assist with one of the biggest challenges beginner surfers face: <strong>paddling</strong>.
                 </p>
@@ -64,17 +62,21 @@
 
         <div class="project-media">
 
-            <img class="img-subsystems" src="images/surfboard_subsystems.png">
+            <img class="img-subsystems" src="images/surfboard/surfboard_subsystems.png">
 
-            <img class="img-trigger" src="images/trigger.png">
+            <img class="img-trigger" src="images/surfboard/trigger.png">
              
-            <img class="img-winch" src ="images/winch.png">
+            <img class="img-winch" src ="images/surfboard/winch.png">
 
-            <img class = "img-CAD_Surfboard" src="images/CAD surfboard.png">
+            <div class="title-item">
+                <h3>Models & Analysis</h3>
+            </div>
 
-            <img class = "img-CAD_Paddle" src="images/CAD paddle.png">
+            <img class = "img-CAD_Surfboard" src="images/surfboard/CAD surfboard.png">
 
-            <img class = "img-Stress_Paddle" src = "images/paddle stress.png">
+            <img class = "img-CAD_Paddle" src="images/surfboard/CAD paddle.png">
+
+            <img class = "img-Stress_Paddle" src = "images/surfboard/paddle stress.png">
 
         </div>
         
@@ -83,48 +85,112 @@
 
     <div class="project-surfboard-bottom">
 
-    <iframe
+   <div class="media-item">
+        <h3>Promotional Video</h3>
 
-        class="video-demo"
-        src="https://www.youtube.com/embed/m4OIKzZjlNc"
-        allowfullscreen>
-
+        <iframe
+            class="video-demo"
+            src="https://www.youtube.com/embed/m4OIKzZjlNc"
+            allowfullscreen>
         </iframe>
+    </div>
 
+    <div class="media-item">
+        <h3>Underwater Testing</h3>
 
-        <img class="img-testing" src="images/surfboard_motion.gif">
+        <img
+            class="img-testing"
+            src="images/surfboard_motion.gif">
+    </div>
 
-    <iframe
-    
-        class="video-demo"
-        src="https://www.youtube.com/embed/9av-HY3cULw"
-        allowfullscreen>
+    <div class="media-item">
+        <h3>Tutorial Video</h3>
 
+        <iframe
+            class="video-demo"
+            src="https://www.youtube.com/embed/9av-HY3cULw"
+            allowfullscreen>
         </iframe>
-
+    </div>
 
 </div>
-
 
 </section>
         </section>
 
-        <section class="project-detail" id="targeting">
-            <div class = project-banner targeting-banner></div>
-            <h2>Autonomous Targeting System</h2>
-            <p>Video games are fun, but what's the real consequence of losing? Restarting a level? Losing your inventory? No matter what, the punishment stays inside the game. I wanted to change that by creating a system that brings the consequences into the real world. 
-                Inspired by Michael Reeves "The Robot That Shines a Laser in Your Eye," I designed and built a face-tracking turret that detects the player's face and fires a Nerf gun whenever they die in the notoriously difficult game Elden Ring. This was one of my first projects involving electronics, embedded systems, and computer vision, so it pushed me well outside my comfort zone and taught me a great deal about integrating hardware and software into a working system.
-                Coded in Python, utilizing opencv and Optical Character Recognition
-                Ran on an Arduino Uno
-                Webcam
-                Servo Motors
-                After finishing the first version of the project in 2023, I decided to revisit the design and build a second iteration. Using Onshape for CAD and 3D printing custom components, I was able to solve many of the stability and assembly issues present in the original prototype. The first version was held together with hot glue and a lot of hope, so this redesign was a huge improvement in both reliability and overall build quality.
-</p>
+<!-- SURFBOARD PROPULSION SYSTEM END --------------------------------------------------------------------------------------------->
+
+
+<!-- MOTOR COASTER START --------------------------------------------------------------------------------------------------------->
+
+        <section class="project-detail" id="coaster">
+             <h2>Motor Coaster</h2>
+            <div class="project-banner coaster-banner"></div>
+            <div class="project-content">
+
+                <div class="project-text">
+                    <p> <strong> Overview: </strong></p>
+
+                    <p>There’s always that one guy in our lives that forgets to use a coaster. That guy might even be you! I created a coaster that uses computer vision to detect cups or bottles that are about to be placed, and moves into position underneath them. This way, you never forget to use a coaster.
+                    Opencv
+                    Raspberry Pi Pico
+                    Raspberry Pi Zero 2 W
+                    </p>
+                </div>
+
+                <div class="project-media">
+
+                    <img class="img-coaster_breadboard" src="images/coaster/coaster_breadboard.jpg">
+
+                    <img class="img-coaster_caster_wheel" src="images/coaster/coaster_caster_wheel.png">
+
+                    <img class = "img-coaster_real" src="images/coaster/coaster_housing_real.png">
+                    
+                    <img class="img-coaster_caster_wheel_breakdown" src ="images/coaster/coaster_caster_wheel_breakdown.png">
+
+                    <img class="img-coaster_real" src="images/coaster/coaster_real.jpg">
+
+                    <video 
+                    class = "img-coaster_movement"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        controls
+                    >
+                        <source 
+                        src = "images/coaster/coaster_movement.webm" type="video/webm">
+                        type="video/webm"
+                        >
+
+                    </video>
+
+                    <img class="img-coaster_caster_ball" src="images/coaster/coaster_caster_ball.png">
+
+                    <video class = "img-coaster_camera"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        >
+                        <source src = "images/coaster/coaster_camera.webm" type="video/webm">
+                    </video>
+
+                    <img class="img-coaster_aruco" src="images/coaster/coaster_aruco.png">
+
+                </div>
+            </div>
         </section>
 
+<!-- MOTOR COASTER END --------------------------------------------------------------------------------------------------------->
+
+<!-- DICE ROLLING ROBOT START ---------------------------------------------------------------------------->
+
         <section class="project-detail" id="dice">
-            <div class="project-banner dice-banner"></div>
+
             <h2>Dice Rolling Robot</h2>
+            <div class="project-banner dice-banner"></div>
+            
             <p>Designed after the character ‘Bender’ from the show Futarama, this robot serves as an interactive alternative to traditional dice that reacts to a user’s dice roll and outputs a personalized audio file. 
                 This robot was developed as a birthday gift to my friend. 
                 I finished the project in 3 weeks. 
@@ -136,15 +202,68 @@
                 </p>
         </section>
 
-        <section class="project-detail" id="coaster">
-            <div class="project-banner coaster-banner"></div>
-            <h2>Motor Coaster</h2>
-            <p>There’s always that one guy in our lives that forgets to use a coaster. That guy might even be you! I created a coaster that uses computer vision to detect cups or bottles that are about to be placed, and moves into position underneath them. This way, you never forget to use a coaster.
-Opencv
-Raspberry Pi Pico
-Raspberry Pi Zero 2 W
-</p>
+<!-- DICE ROLLING ROBOT END -------------------------------------------------------------->
+
+<!-- AUTONOMOUS TARGETING SYSTEM START ---------------------------------------------------->
+
+        <section class="project-detail" id="targeting">
+
+            <h2>Autonomous Targeting System</h2>
+            <div class = "project-banner targeting-banner"></div>
+            <div class="project-content">
+                <div class="project-text">
+
+                    <p> <strong> Overview: </strong></p>
+
+                    <p>Video games are fun, but what's the real consequence of losing? Restarting a level? Losing your inventory? No matter what, the punishment stays inside the game. I wanted to change that by creating a system that brings the consequences into the real world. 
+                        Inspired by Michael Reeves "The Robot That Shines a Laser in Your Eye," I designed and built a face-tracking turret that detects the player's face and fires a Nerf gun whenever they die in the notoriously difficult game Elden Ring. This was one of my first projects involving electronics, embedded systems, and computer vision, so it pushed me well outside my comfort zone and taught me a great deal about integrating hardware and software into a working system.
+                        Coded in Python, utilizing opencv and Optical Character Recognition
+                        Ran on an Arduino Uno
+                        Webcam
+                        Servo Motors
+                        After finishing the first version of the project in 2023, I decided to revisit the design and build a second iteration. Using Onshape for CAD and 3D printing custom components, I was able to solve many of the stability and assembly issues present in the original prototype. The first version was held together with hot glue and a lot of hope, so this redesign was a huge improvement in both reliability and overall build quality.
+                    </p>
+                </div>
+            
+            <div class="project-media">
+
+                    <img class="img-targeting_died" src="images/targeting/targeting_died.jpeg">
+
+                    <img class="img-targeting_face" src="images/targeting/targeting_face.png">
+
+                    <video class="img-targeting_tracking" src="images/targeting/targeting_tracking.webm" autoplay muted loop playsinline></video>
+
+                    <img class="img-targeting_code" src ="images/targeting/targeting_code.png">
+                     
+                    <video class="img-targeting_pan" src="images/targeting/targeting_pan.webm" autoplay muted loop playsinline></video>
+
+                    <img class = "img-targeting_gun" src="images/targeting/targeting_gun.png">
+
+                    <video class = "img_targeting_shoot" src="images/targeting/targeting_shoot.webm" autoplay muted loop playsinline></video>
+
+                    <div class="title-item">
+                        <h3>Version Two</h3>
+                    </div>
+
+                    <img class = "img-targeting_CADV2" src="images/targeting/targeting_CADV2.png">
+
+                    <img class = "img-targeting_drawing" src="images/targeting/targeting_drawing.png">
+
+                    <img class = "img-targeting_servo_brackets" src="images/targeting/targeting_servo_brackets.png">
+
+                    <img class = "img-targeting_servo" src="images/targeting/targeting_servo.png">
+
+                    <img class = "img-targeting_box" src="images/targeting/targeting_box.png">
+
+                    <img class = "img-targeting_2" src="images/targeting/targeting_2.png">
+
+                    <video class = "img-targeting_2motion" src="images/targeting/targeting_2motion.webm" autoplay muted loop playsinline></video>
+
+                </div>
+
         </section>
+
+<!-- AUTONOMOUS TARGETING SYSTEM END -->
 
     </main>
 </body>
