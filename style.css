@@ -481,13 +481,15 @@ footer {
 
 .project-details-page .project-detail h2 {
     font-family: var(--font-display);
+    text-align:center;
+    font-size: 1.9rem;
+    font-style:italic;
     text-transform: uppercase;
     margin-bottom: 1rem;
 }
 
 .project-details-page .project-detail p {
     
-    font-size: 1.3rem;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
@@ -526,16 +528,15 @@ footer {
 .project-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1rem;
     align-items: start;
 }
 
-/* Project media */
 
 .project-media {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .project-media img,
@@ -547,11 +548,83 @@ footer {
     object-fit: cover;
 }
 
+
+
+/* Project TEXT */
+
+
+
+.surfboard-project-body p {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  text-indent: 2rem;
+}
+
+.surfboard-project-subheading {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  margin-bottom: 0rem;
+  font-size: 1.4rem;
+  color:var(--red);
+  font-style: italic;
+  text-align:center;
+}
+
+.surfboard-project-bullets {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin-left: 0;
+  margin-bottom: 2rem;
+}
+
+.surfboard-project-bullets ol li::marker {
+  font-weight: bold;
+}
+
+.report-download {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  margin-top: 1rem;
+  color: white;
+  background-color: var(--red);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.report-download:hover {
+  background-color: white;
+  color: var(--red);
+}
+
 /* Individual image classes : SURFBOARD-----------------------------------------------------------------*/
 
 .img-subsystems {
     grid-column: 1 / -1;
     height: 320px;
+}
+
+.img-surfboard_flow_chart {
+  grid-column: 1 / -1;
+  height: 340px;
+}
+
+.img-CAD_Surfboard {
+  grid-column: 1 / -1;
+  height: 350px;
+}
+
+.img-CAD_Paddle {
+height: 210px;
+}
+
+.img-surfboard_trigger_CAD {
+  height: 210px;
 }
 
 .img-trigger {
@@ -562,28 +635,24 @@ footer {
   height: 220px;
 }
 
-.img-CAD_Surfboard {
-  grid-column: 1 / -1;
-  transform: scale(0.8) translateY(-20px);
-  height: 370px;
-}
-
-.img-CAD_Paddle {
-height: 220px;
-transform: translateY(-50px) translateX(30px);
-}
-
 .img-Stress_Paddle {
-  height: 200px;
-  transform: scaleX(0.7) translateY(-40px);
+  height: 210px;
 }
 
-.img-surfboard_test {
+.img-surfboard_trigger_stress {
+  height: 210px;
+}
+
+.img-surfboard_motion_graphs {
   grid-column: 1 / -1;
-  height: 320px;
-  transform: translateY(-50px);
+  height: 220px;
 }
 
+.img-surfboard_paddle_graphs {
+  grid-column: 1 / -1;
+  height: 210px;
+  margin-bottom: 3rem;
+}
 
 .project-surfboard-bottom {
     display: grid;
@@ -595,7 +664,7 @@ transform: translateY(-50px) translateX(30px);
 .video-testing,
 .img-testing {
     width: 100%;
-    height: 350px;   /* Adjust until you're happy */
+    height: 350px;  
     border-radius: 1rem;
 }
 
@@ -637,6 +706,30 @@ transform: translateY(-50px) translateX(30px);
 
 .img-coaster_caster_wheel_breakdown {
     height: 220px;
+}
+
+.img-coaster_housing_real {
+  height: 220px;
+}
+
+
+
+.img-coaster_real {
+  height: 220px;
+  object-fit: cover;
+  object-position: 0 -50px;
+}
+
+.img-coaster_movement {
+  height: 220px;
+}
+
+.img-coaster_caster_ball {
+  height: 220px;
+}
+
+.img-coaster_camera{
+  height: 220px;
 }
 
 .img-coaster_aruco {

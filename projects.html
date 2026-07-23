@@ -11,186 +11,255 @@
 <body>
     <header class="projects-hero">
     <div class="hero-content">
-        <p class="eyebrow">Engineering Portfolio</p>
+        <p class="eyebrow">Faraz Chishty's Engineering Portfolio</p>
         <h1>Projects</h1>
-        <p>Design process, engineering decisions, and project outcomes.</p>
     </div>
 
-    
+
 </header>
     <main class="project-details-page">
 
-        <section class="project-detail" id="surfboard">
-            <h2>Surfboard Propulsion System</h2>
+<!-- SURFBOARD PROPULSION SYSTEM --------------------------------------------------------------------------------------------->
 
-             <div class="project-banner surfboard-banner"></div>
+<section class="project-detail" id="surfboard">
+    <h2>Surfboard Propulsion System</h2>
+    <div class="project-banner surfboard-banner"></div>
 
-             <div class="project-content">
+    <div class="project-content">
 
-                 <div class="project-text">
-
+        <div class="surfboard-project-text">
             
+            <h3 class = surfboard-project-subheading>---- What is This Thing? ----
+            </h3> 
+
+            <div class = surfboard-project-body>
+                <p>Good question! Working with a team of four engineers, I helped develop a purely mechanical propulsion 
+                system designed to assist with one of the biggest challenges beginner surfers face: <strong>paddling</strong>.
+                This was my capstone project for <i>Rutgers University</i>.
+                </p>
+            </div>
             
-             <p> <strong> Overview: </strong></p>
+            <h3 class = surfboard-project-subheading>------- The Design -------
+            </h3>
 
-            <p>Working with a team of four engineers, I helped develop a purely mechanical propulsion system designed to assist with one of the biggest challenges beginner surfers face: <strong>paddling</strong>.
+            <div class = surfboard-project-body>
+            <p>The system stores energy in two extension springs
+                and releases it at the pull of a lever, producing a short burst of forward thrust. 
+                It consists of three main subsystems: 
+            </p>
+            </div>
+
+            <div class = surfboard-project-bullets>
+                <ul>
+                    <li> <strong>Paddle: </strong>  A flexible neoprene paddle travels along an aluminum rail, 
+                        driven by two high-strength springs. When released, it travels through the water and generates thrust.
+                    </li>
+
+                    <p></p>
+                    <li> <strong>Winch: </strong> A hand-cranked, ratcheting winch provides a 26:1 mechanical advantage,
+                        allowing the user to reload the paddle effortlessly while remaining on the board. 
+                    </li>
+
+                    <p></p>
+                    <li><strong>Trigger: </strong> A custom-machined, crossbow-inspired mechanism locks the
+                        paddle under load. A manual safety and multiple release safeguards prevent accidental deployment.
+                    </li>
+
+                </ul>
+            </div>
+            
+            <h3 class = surfboard-project-subheading>------- Manufacturing -------
+            </h3>
+
+            <div class = surfboard-project-body>
+                <p> The aluminum rail system had extrusions cut into it to fit the trigger, while the paddle was constructed from <strong>a 0.25-inch neoprene sheet</strong> supported by an aluminum frame. 
+                    Two high-strength extension springs, each with a spring constant of approximately <strong>375 N/m</strong>, powered the paddle. 
+                    The winch, springs, and Dyneema rope were selected for their strength, durability, and suitability for wet environments.
+                    Finally, <strong>CNC and traditional milling</strong> were used to manufacture the aluminum trigger housing, latch, handle, and safety components.
                 </p>
-            <p> <strong> Design: </strong> </p>
+            </div>
 
-            <p>Our system provides a quick burst of speed with the pull of a lever. It consists of 3 main subsystems: 
-               </p>
+            <h3 class = surfboard-project-subheading>------- Deployment -------
+            </h3>
 
-            <ul>
-                <li>
-                    <strong>Paddle: </strong> Travels along the aluminum rail, attached to 2, high power springs. When release, it provides a large amount of thrust
-                </li>
-
-                <li>
-                    <strong>Winch: </strong> Allows for effortless energy storage of the paddle. Cranks the paddle into position 
-                </li>
-
-                <li>
-                    <strong>Trigger: </strong> Holds the paddle in place with a crossbow-inspired mechanism.
-                </li>
-
+            <div class = surfboard-project-body>
+                <p> To use the system, the rider would follow these steps:
                 </p>
+            </div>
 
-            <p>
+            <div class = surfboard-project-bullets>
+                <ol>
+                    <li>Attach the winch rope’s carabiner to the paddle trolley.</li>
+                    <li>Engage the winch ratchet to prevent backward motion.</li>
+                    <li>Turn the crank to pull the paddle along the rail until it securely clicks into the trigger.</li>
+                    <li>Remove the carabiner from the trolley.</li>
+                    <li>Disengage the trigger’s safety and the winch ratchet.</li>
+                    <li>Push the lever on top of the board and catch that wave!</li>
+                </ol>
+            </div>
+
+            <h3 class = surfboard-project-subheading>------- Testing -------
+            </h3>
+             
+            <div class = surfboard-project-body>
+                <p> After manufacturing was completed, we tested the system in the Werblin Olympic Pool with riders of varying mass. Here are some of the results we gained from testing:
                 </p>
+            </div>
 
-                </div>
+            <div class = surfboard-project-bullets>
+                <ul> 
+                    <li>Accelerated the board from rest to <strong>2.5 m/s within 0.2 seconds </strong></li>
+                    <p></p>
+                    <li>Stored approximately <strong>211 J</strong> of spring energy</li>
+                    <p></p>
+                    <li>Withstood a maximum spring load of <strong>126 lbf</strong></li>
+                    <p></p>
+                    <li>Achieved a <strong>4.7 factor of safety</strong> for the trigger</li>
+                    <p></p>
+                    <li> Built for <strong>$325</strong>, less than half of the <strong>$700 budget</strong> </li>
+                </ul>
+            </div>
+
+            <h3 class = surfboard-project-subheading>------- Documentation ------- </h3>
+            <div class = surfboard-project-body>
+                <p>For a more detailed breakdown of this project, please refer to the project report here:</p>
+                <a
+                    class="report-download"
+                    href="surfboard_images/surfboard_Report.pdf"
+                    download
+                    >
+                    Surfboard Propulsion System Report PDF
+                </a>
+            </div>
+        </div>
 
         <div class="project-media">
 
             <img class="img-subsystems" src="images/surfboard/surfboard_subsystems.png">
-
-            <img class="img-trigger" src="images/surfboard/trigger.png">
-             
-            <img class="img-winch" src ="images/surfboard/winch.png">
-
-            <div class="title-item">
-                <h3>Models & Analysis</h3>
-            </div>
-
             <img class = "img-CAD_Surfboard" src="images/surfboard/CAD surfboard.png">
-
             <img class = "img-CAD_Paddle" src="images/surfboard/CAD paddle.png">
-
+            <img class = "img-surfboard_trigger_CAD" src="images/surfboard/surfboard_trigger_CAD.png">
+            <img class="img-winch" src ="images/surfboard/winch.png">
+            <img class="img-trigger" src="images/surfboard/trigger.png">
+            <img class = "img-surfboard_flow_chart" src="images/surfboard/surfboard_flow_chart.png">
             <img class = "img-Stress_Paddle" src = "images/surfboard/paddle stress.png">
+            <img class = "img-surfboard_trigger_stress" src = "images/surfboard/surfboard_trigger_stress.png">
+            <img class = "img-surfboard_motion_graphs" src="images/surfboard/surfboard_motion_graphs.png">
+            <img class = "img-surfboard_paddle_graphs" src="images/surfboard/surfboard_paddle_graphs.png">
 
         </div>
-        
-
+    
     </div>
 
     <div class="project-surfboard-bottom">
 
-   <div class="media-item">
-        <h3>Promotional Video</h3>
+        <div class="media-item">
 
-        <iframe
-            class="video-demo"
-            src="https://www.youtube.com/embed/m4OIKzZjlNc"
-            allowfullscreen>
-        </iframe>
+            <h3>Promotional Video</h3>
+
+            <iframe
+                class="video-demo"
+                src="https://www.youtube.com/embed/m4OIKzZjlNc"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="media-item">
+            <h3>Underwater Testing</h3>
+
+            <img class="img-testing" src="images/surfboard_motion.gif">
+        </div>
+
+        <div class="media-item">
+            <h3>Tutorial Video</h3>
+
+            <iframe
+            class="video-demo" src="https://www.youtube.com/embed/9av-HY3cULw" allowfullscreen>
+            </iframe>
+        </div>
+
     </div>
-
-    <div class="media-item">
-        <h3>Underwater Testing</h3>
-
-        <img
-            class="img-testing"
-            src="images/surfboard_motion.gif">
-    </div>
-
-    <div class="media-item">
-        <h3>Tutorial Video</h3>
-
-        <iframe
-            class="video-demo"
-            src="https://www.youtube.com/embed/9av-HY3cULw"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-</div>
 
 </section>
-        </section>
+
 
 <!-- SURFBOARD PROPULSION SYSTEM END --------------------------------------------------------------------------------------------->
 
 
 <!-- MOTOR COASTER START --------------------------------------------------------------------------------------------------------->
 
-        <section class="project-detail" id="coaster">
-             <h2>Motor Coaster</h2>
-            <div class="project-banner coaster-banner"></div>
-            <div class="project-content">
+<section class="project-detail" id="coaster">
+    <h2>Motor Coaster</h2>
+    <div class="project-banner coaster-banner"></div>
 
-                <div class="project-text">
-                    <p> <strong> Overview: </strong></p>
+    <div class="project-content">
 
-                    <p>There’s always that one guy in our lives that forgets to use a coaster. That guy might even be you! I created a coaster that uses computer vision to detect cups or bottles that are about to be placed, and moves into position underneath them. This way, you never forget to use a coaster.
-                    Opencv
-                    Raspberry Pi Pico
-                    Raspberry Pi Zero 2 W
-                    </p>
-                </div>
+        <div class="project-text">
+            <p> <strong> Overview: </strong></p>
+            <p>There’s always that one guy in our lives that forgets to use a coaster. That guy might even be you! I created a coaster that uses computer vision to detect cups or bottles that are about to be placed, and moves into position underneath them. This way, you never forget to use a coaster.
+                Opencv
+                Raspberry Pi Pico
+                Raspberry Pi Zero 2 W
+            </p>
 
-                <div class="project-media">
+        </div>
 
-                    <img class="img-coaster_breadboard" src="images/coaster/coaster_breadboard.jpg">
+        <div class="project-media">
+            <img class = "img-coaster_concept" src="images/coaster/coaster_concept.png">
+            <img class="img-coaster_breadboard" src="images/coaster/coaster_breadboard.jpg">
+            <img class="img-coaster_caster_wheel" src="images/coaster/coaster_caster_wheel.png">
+            <img class = "img-coaster_housing_real" src="images/coaster/coaster_housing_real.png"> 
+            <img class="img-coaster_caster_wheel_breakdown" src ="images/coaster/coaster_caster_wheel_breakdown.png">
+            <img class="img-coaster_real" src="images/coaster/coaster_real.jpg">
+            <video 
+             class = "img-coaster_movement"
+                autoplay
+                loop
+                muted
+                playsinline
+                controls
+            >
+                <source 
+                src = "images/coaster/coaster_movement.webm" type="video/webm">
+                type="video/webm"
+                >
+            </video>
 
-                    <img class="img-coaster_caster_wheel" src="images/coaster/coaster_caster_wheel.png">
+            <img class= "img-coaster_connections" src="images/coaster/coaster_connections.png">
+            <img class= "img-coaster_concept_ball_caster" src="images/coaster/coaster_concept_ball_caster.png">
+            <img class= "img-coaster_ball_caster_measurements" src="images/coaster/coaster_ball_caster_measurements.png">
+            <img class="img-coaster_caster_ball" src="images/coaster/coaster_caster_ball.png">
+            <img class= "img-coaster_camera_concept" src="images/coaster/coaster_camera_concept.png">
 
-                    <img class = "img-coaster_real" src="images/coaster/coaster_housing_real.png">
-                    
-                    <img class="img-coaster_caster_wheel_breakdown" src ="images/coaster/coaster_caster_wheel_breakdown.png">
+            <video class = "img-coaster_camera"
+                autoplay
+                loop
+                muted
+                playsinline
+                >
+                <source src = "images/coaster/coaster_camera.webm" type="video/webm">
+            </video>
 
-                    <img class="img-coaster_real" src="images/coaster/coaster_real.jpg">
+            <img class="img-coaster_aruco" src="images/coaster/coaster_aruco.png">
+            <img class = "img-coaster_new_concept" src="images/coaster/coaster_new_concept.png">
 
-                    <video 
-                    class = "img-coaster_movement"
-                        autoplay
-                        loop
-                        muted
-                        playsinline
-                        controls
-                    >
-                        <source 
-                        src = "images/coaster/coaster_movement.webm" type="video/webm">
-                        type="video/webm"
-                        >
+        </div>
 
-                    </video>
+    </div>
 
-                    <img class="img-coaster_caster_ball" src="images/coaster/coaster_caster_ball.png">
-
-                    <video class = "img-coaster_camera"
-                        autoplay
-                        loop
-                        muted
-                        playsinline
-                        >
-                        <source src = "images/coaster/coaster_camera.webm" type="video/webm">
-                    </video>
-
-                    <img class="img-coaster_aruco" src="images/coaster/coaster_aruco.png">
-
-                </div>
-            </div>
-        </section>
+</section>
 
 <!-- MOTOR COASTER END --------------------------------------------------------------------------------------------------------->
 
 <!-- DICE ROLLING ROBOT START ---------------------------------------------------------------------------->
 
-        <section class="project-detail" id="dice">
+<section class="project-detail" id="dice">
+    <h2>Dice Rolling Robot</h2>
+    <div class="project-banner dice-banner"></div>
 
-            <h2>Dice Rolling Robot</h2>
-            <div class="project-banner dice-banner"></div>
-            
+    <div class="project-content">
+        
+        <div class="project-text">
             <p>Designed after the character ‘Bender’ from the show Futarama, this robot serves as an interactive alternative to traditional dice that reacts to a user’s dice roll and outputs a personalized audio file. 
                 This robot was developed as a birthday gift to my friend. 
                 I finished the project in 3 weeks. 
@@ -199,72 +268,88 @@
                 LCD Touchscreen
                 Arduino Uno
                 Servo Motors
-                </p>
-        </section>
+            </p>
+        </div>
+
+        <div class="project-media">
+
+            <img class="img-dice" src="images/dice/dice_bender.jpg">
+            <img class="img-dice" src="images/dice/dice_concept.jpg">
+            <img class="img-dice" src="images/dice/dice_housing_CAD.png">
+            <img class="img-dice" src="images/dice/dice_housing_real.jpg">
+            <img class="img-dice" src="images/dice/dice_servo.jpg">
+            <img class="img-dice" src="images/dice/dice_heart.jpg">
+            <img class="img-dice" src="images/dice/dice_head.jpg">
+
+        </div>
+            
+    </div>
+</section>
 
 <!-- DICE ROLLING ROBOT END -------------------------------------------------------------->
 
 <!-- AUTONOMOUS TARGETING SYSTEM START ---------------------------------------------------->
 
-        <section class="project-detail" id="targeting">
+<section class="project-detail" id="targeting">
+    <h2>Autonomous Targeting System</h2>
+    <div class = "project-banner targeting-banner"></div>
 
-            <h2>Autonomous Targeting System</h2>
-            <div class = "project-banner targeting-banner"></div>
-            <div class="project-content">
-                <div class="project-text">
-
-                    <p> <strong> Overview: </strong></p>
-
-                    <p>Video games are fun, but what's the real consequence of losing? Restarting a level? Losing your inventory? No matter what, the punishment stays inside the game. I wanted to change that by creating a system that brings the consequences into the real world. 
-                        Inspired by Michael Reeves "The Robot That Shines a Laser in Your Eye," I designed and built a face-tracking turret that detects the player's face and fires a Nerf gun whenever they die in the notoriously difficult game Elden Ring. This was one of my first projects involving electronics, embedded systems, and computer vision, so it pushed me well outside my comfort zone and taught me a great deal about integrating hardware and software into a working system.
-                        Coded in Python, utilizing opencv and Optical Character Recognition
-                        Ran on an Arduino Uno
-                        Webcam
-                        Servo Motors
-                        After finishing the first version of the project in 2023, I decided to revisit the design and build a second iteration. Using Onshape for CAD and 3D printing custom components, I was able to solve many of the stability and assembly issues present in the original prototype. The first version was held together with hot glue and a lot of hope, so this redesign was a huge improvement in both reliability and overall build quality.
-                    </p>
-                </div>
+    <div class="project-content">
+        <div class="project-text">
             
-            <div class="project-media">
+            <p> <strong> Overview: </strong></p>
+            <p>Video games are fun, but what's the real consequence of losing? Restarting a level? Losing your inventory? No matter what, the punishment stays inside the game. I wanted to change that by creating a system that brings the consequences into the real world. 
+                    Inspired by Michael Reeves "The Robot That Shines a Laser in Your Eye," I designed and built a face-tracking turret that detects the player's face and fires a Nerf gun whenever they die in the notoriously difficult game Elden Ring. This was one of my first projects involving electronics, embedded systems, and computer vision, so it pushed me well outside my comfort zone and taught me a great deal about integrating hardware and software into a working system.
+                    Coded in Python, utilizing opencv and Optical Character Recognition
+                    Ran on an Arduino Uno
+                    Webcam
+                    Servo Motors
+                    After finishing the first version of the project in 2023, I decided to revisit the design and build a second iteration. Using Onshape for CAD and 3D printing custom components, I was able to solve many of the stability and assembly issues present in the original prototype. The first version was held together with hot glue and a lot of hope, so this redesign was a huge improvement in both reliability and overall build quality.
+            </p>
+        </div>
+        
+        <div class="project-media">
 
-                    <img class="img-targeting_died" src="images/targeting/targeting_died.jpeg">
+            <img class="img-targeting_died" src="images/targeting/targeting_died.jpeg">
 
-                    <img class="img-targeting_face" src="images/targeting/targeting_face.png">
+            <img class="img-targeting_face" src="images/targeting/targeting_face.png">
 
-                    <video class="img-targeting_tracking" src="images/targeting/targeting_tracking.webm" autoplay muted loop playsinline></video>
+            <video class="img-targeting_tracking" src="images/targeting/targeting_tracking.webm" autoplay muted loop playsinline></video>
 
-                    <img class="img-targeting_code" src ="images/targeting/targeting_code.png">
+            <img class="img-targeting_code" src ="images/targeting/targeting_code.png">
                      
-                    <video class="img-targeting_pan" src="images/targeting/targeting_pan.webm" autoplay muted loop playsinline></video>
+            <video class="img-targeting_pan" src="images/targeting/targeting_pan.webm" autoplay muted loop playsinline></video>
 
-                    <img class = "img-targeting_gun" src="images/targeting/targeting_gun.png">
+            <img class = "img-targeting_gun" src="images/targeting/targeting_gun.png">
 
-                    <video class = "img_targeting_shoot" src="images/targeting/targeting_shoot.webm" autoplay muted loop playsinline></video>
+            <video class = "img_targeting_shoot" src="images/targeting/targeting_shoot.webm" autoplay muted loop playsinline></video>
 
-                    <div class="title-item">
-                        <h3>Version Two</h3>
-                    </div>
-
-                    <img class = "img-targeting_CADV2" src="images/targeting/targeting_CADV2.png">
-
-                    <img class = "img-targeting_drawing" src="images/targeting/targeting_drawing.png">
-
-                    <img class = "img-targeting_servo_brackets" src="images/targeting/targeting_servo_brackets.png">
-
-                    <img class = "img-targeting_servo" src="images/targeting/targeting_servo.png">
-
-                    <img class = "img-targeting_box" src="images/targeting/targeting_box.png">
-
-                    <img class = "img-targeting_2" src="images/targeting/targeting_2.png">
-
-                    <video class = "img-targeting_2motion" src="images/targeting/targeting_2motion.webm" autoplay muted loop playsinline></video>
-
+                <div class="title-item">
+                    <h3>Version Two</h3>
                 </div>
 
-        </section>
+            <img class = "img-targeting_CADV2" src="images/targeting/targeting_CADV2.png">
+
+            <img class = "img-targeting_drawing" src="images/targeting/targeting_drawing.png">
+
+            <img class = "img-targeting_servo_brackets" src="images/targeting/targeting_servo_brackets.png">
+
+            <img class = "img-targeting_servo" src="images/targeting/targeting_servo.png">
+
+            <img class = "img-targeting_box" src="images/targeting/targeting_box.png">
+
+            <img class = "img-targeting_2" src="images/targeting/targeting_2.png">
+
+            <video class = "img-targeting_2motion" src="images/targeting/targeting_2motion.webm" autoplay muted loop playsinline></video>
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- AUTONOMOUS TARGETING SYSTEM END -->
 
-    </main>
+</main>
 </body>
 </html>
