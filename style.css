@@ -43,18 +43,67 @@ body {
     linear-gradient(180deg, #050507 0%, #08080b 50%, #050507 100%);
   color: var(--text);
   line-height: 1.6;
+  padding-top: 5rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+/* Header */
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  padding: 2rem 7vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(18, 18, 23, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: transform 0.3s ease;
+}
+
+.top-nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-logo,
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+
 
 /* HERO */
 
 .hero {
   min-height: 100vh;
-  padding: 2rem 7vw 4rem;
+  padding: 2rem 7vw 0rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -76,6 +125,7 @@ a {
   font-size: clamp(1.15rem, 2vw, 1.6rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+
 }
 
 .nav a {
@@ -87,8 +137,33 @@ a {
 }
 
 .hero-content {
-  max-width: 720px;
-  margin: auto 0 2rem;
+  --hero-image-width: 750px;
+
+  display: grid;
+  grid-template-columns: var(--hero-image-width) 1fr;
+  align-items: center;
+  width: 100%;
+  margin: auto auto 2rem;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  transform: translate(150px, 32px);
+}
+
+.hero-img img {
+  display: block;
+  width: var(--hero-image-width);
+  max-width: none;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-text {
+  min-width: 0;
+  transform: translateX(20px);
 }
 
 .eyebrow {
@@ -111,7 +186,7 @@ a {
 .hero-content p:last-child {
   color: var(--muted);
   font-size: 1.05rem;
-  max-width: 640px;
+
 }
 
 /* PROJECTS */
@@ -135,15 +210,15 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .project-card {
+  min-height: 500px;
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: auto;
   background: linear-gradient(145deg, #121217 0%, #191a22 100%);
   border: 1px solid rgba(255,255,255,0.1);
   border-left: 4px solid var(--red);
@@ -180,7 +255,7 @@ a {
 
 .project-image {
   position: relative;
-  height: 270px;
+  height: 300px;
   margin: 1rem 1rem 0;
   overflow: hidden;
   isolation: isolate;
@@ -264,9 +339,6 @@ a {
    now applied to every project card that uses the gallery-left/right classes.
 */
 
-.project-card .project-gallery {
-  grid-template-columns: repeat(3, 1fr);
-}
 
 .project-card .gallery-left-still,
 .project-card .gallery-right-still,
@@ -339,7 +411,7 @@ a {
 
 .project-info h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.15;
   margin-bottom: 0.7rem;
   text-transform: uppercase;
@@ -434,32 +506,7 @@ footer {
   border-top: 1px solid var(--line);
 }
 
-/* RESPONSIVE */
 
-@media (max-width: 800px) {
-  .hero {
-    padding: 1.4rem 5vw 3rem;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-content {
-    margin-top: 2rem;
-  }
-
-  .projects-section,
-  .details-section {
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 
 /* PROJECT DETAILS PAGE */
@@ -491,7 +538,6 @@ footer {
 .project-details-page .project-detail p {
     
     line-height: 1.8;
-    margin-bottom: 1rem;
 }
 
 
@@ -511,12 +557,30 @@ footer {
     border: 1px solid rgba(255,255,255,.12);
 }
 
-.surfboard-banner {
-    background-image: url('./images/surfboard/surfboard_banner.gif');
+.project-banner .surfboard-banner {
+  height: 500px;
+  
 }
 
-.coaster-banner{
-  background-image: url('./images/coaster/coaster_banner.gif');
+.surfboard-banner {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.coaster-banner {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
+}
+
+.img-dice_banner {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
 }
 
 .targeting-banner{
@@ -562,7 +626,7 @@ footer {
   text-indent: 2rem;
 }
 
-.surfboard-project-subheading {
+.subheading {
   font-family: var(--font-display);
   text-transform: uppercase;
   margin-bottom: 0rem;
@@ -570,6 +634,7 @@ footer {
   color:var(--red);
   font-style: italic;
   text-align:center;
+  margin-bottom: 0.7rem;
 }
 
 .surfboard-project-bullets {
@@ -579,11 +644,16 @@ footer {
   list-style-position: outside;
   padding-left: 1.5rem;
   margin-left: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
 }
 
 .surfboard-project-bullets ol li::marker {
   font-weight: bold;
+}
+
+.surfboard-project-bullets li{
+  margin-bottom: 0.7rem;
 }
 
 .report-download {
@@ -600,6 +670,44 @@ footer {
 .report-download:hover {
   background-color: white;
   color: var(--red);
+}
+
+
+.coaster-body {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-indent: 2rem;
+}
+
+.dice-body {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-indent: 2rem;
+}
+
+.parts-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.parts-list > li {
+  margin-bottom: 1rem;
+}
+
+.description-list {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.description-list li {
+  padding-left: 0.25rem;
+  margin-bottom: 0.35rem;
 }
 
 /* Individual image classes : SURFBOARD-----------------------------------------------------------------*/
@@ -693,50 +801,238 @@ height: 210px;
     margin-bottom: 0.6rem;
 }
 
-/* Classes: COASTER ---------------------------------------------------------------------------*/
+/* img Classes: COASTER ---------------------------------------------------------------------------*/
 
-.img-coaster_breadboard {
-    grid-column: 1 / -1;
-    height: 320px;
+.project-media .img-coaster_concept {
+  width: 60%;
+  justify-self: center;
+  grid-column: 1/-1;
+  height: 310px;
 }
 
-.img-coaster_caster_wheel {
-    height: 220px;
+.img-coaster_caster_wheel,
+.img-coaster_caster_wheel_breakdown,
+.img-coaster_caster_ball,
+.img-coaster_concept_ball_caster {
+  height: 230px;
 }
 
-.img-coaster_caster_wheel_breakdown {
-    height: 220px;
+.project-media .img-coaster_housing_real {
+  height: 230px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 50%;
 }
 
-.img-coaster_housing_real {
-  height: 220px;
+.project-media .img-coaster_drawing {
+  grid-column: 1 / -1;
+  width: 90%;
+  justify-self: center;
+  height: 350px;
 }
-
 
 
 .img-coaster_real {
-  height: 220px;
+  height: 280px;
+  grid-column: 1;
   object-fit: cover;
   object-position: 0 -50px;
 }
 
-.img-coaster_movement {
-  height: 220px;
+.space {
+  margin-top: 2rem;
 }
 
-.img-coaster_caster_ball {
-  height: 220px;
-}
+
 
 .img-coaster_camera{
-  height: 220px;
+  height: 280px;
 }
 
-.img-coaster_aruco {
-    height: 220px;
+.project-media .img-coaster_camera_concept {
+  grid-column: 1 / -1;
+  height: 270px;
+  width: 70%;
+  justify-self: center;
 }
 
-/* Classes: TARGETING ---------------------------------------------------------------------------*/
+.project-media .img-coaster_aruco {
+  height: 250px;
+  width: 85%;
+  justify-self: center;
+  transform: translateX(20px);
+}
+
+.project-media .img-coaster_new_concept {
+  margin-top: 3rem;
+  height: 350px;
+  grid-column: 1 / -1;
+}
+
+.img-coaster_algorithm {
+  height: 250px;
+}
+
+.img-coaster_overshoot {
+  grid-column: 1 / -1;
+  height: 280px;
+}
+
+.descriptor {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: -0.5 rem;
+  margin-top: 1rem;
+
+}
+
+.img-coaster_test {
+  grid-column: 1 / -1;
+  height: 280px;
+}
+
+.muted-video {
+  position: relative;
+}
+
+.project-banner-video {
+  width: 100%;
+  height: 460px;
+  margin-bottom: 2rem;
+}
+
+.project-banner-video .project-banner {
+  margin-bottom: 0;
+}
+
+.full-width-video {
+  grid-column: 1 / -1;
+}
+
+/* img Classes: DICE ---------------------------------------------------------------------------*/
+
+
+
+
+.img-dice_bender,
+.img-dice_concept{
+  height: 300px;
+}
+
+.project-media .img-dice_helm_CAD {
+  height: 250px;
+  grid-column: 1 / -1;
+  width: 70%;
+  justify-self: center;
+  margin-top: 5rem;
+}
+.project-media .img-dice_servo_CAD {
+  height: 250px;
+  grid-column: 1 / -1;
+  width:70%;
+  justify-self: center;
+}
+
+.project-media .img-dice_housing_CAD {
+  grid-column: 1 / -1;
+  height: 250px;
+  width: 70%;
+  justify-self: center;
+  margin-bottom: 5rem;
+}
+
+.project-media .img-dice_final_CAD {
+  grid-column: 1 / -1;
+  height: 300px;
+  width: 60%;
+  justify-self: center;
+}
+
+
+.img-dice_housing_real,
+.img-dice_servo,
+.img-dice_heart,
+.img-dice_head,
+.img-dice_testing_rotate,
+.img-dice_rolling {
+  height: 250px;
+}
+
+.full-width-video .img-dice_bot_final {
+  height: 420px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 70%;
+}
+
+
+
+/* img Classes: TARGETING ---------------------------------------------------------------------------*/
+
+.targeting-tracking-video {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+.targeting-pan-video {
+  grid-column: 2;
+  grid-row: 4 / span 2;
+}
+
+.muted-video video {
+  display: block;
+  width: 100%;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  width: 75px;
+  height: 75px;
+  padding: 0;
+
+  background: rgba(229, 9, 20, 0.78);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* White triangle */
+.play-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+
+  width: 0;
+  height: 0;
+
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent;
+  border-left: 21px solid white;
+}
+
+.play-button:hover {
+  background: rgba(229, 9, 20, 0.95);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.play-button.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .img-targeting_died {
     grid-column: 1 / -1;

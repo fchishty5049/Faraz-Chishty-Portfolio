@@ -9,8 +9,18 @@
 
 
 <body>
+    <nav class="top-nav" id="top-nav">
+        <a class="nav-logo" href="index.html">Faraz Chishty</a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+        <a href="images/resume.pdf" target="_blank">Resume</a>
+        </div>
+    </nav>
+
     <header class="projects-hero">
-    <div class="hero-content">
+        <div>
         <p class="eyebrow">Faraz Chishty's Engineering Portfolio</p>
         <h1>Projects</h1>
     </div>
@@ -22,14 +32,18 @@
 <!-- SURFBOARD PROPULSION SYSTEM --------------------------------------------------------------------------------------------->
 
 <section class="project-detail" id="surfboard">
-    <h2>Surfboard Propulsion System</h2>
-    <div class="project-banner surfboard-banner"></div>
+
+        <h2>Surfboard Propulsion System</h2>
+        <div class="muted-video project-banner-video">
+            <video class="project-banner surfboard-banner" src="images/surfboard/surfboard_banner.webm" playsinline></video>
+            <button type="button" class="play-button" aria-label="Play video"></button>
+        </div>
 
     <div class="project-content">
 
         <div class="surfboard-project-text">
             
-            <h3 class = surfboard-project-subheading>---- What is This Thing? ----
+            <h3 class = subheading>---- What is This Thing? ----
             </h3> 
 
             <div class = surfboard-project-body>
@@ -39,7 +53,7 @@
                 </p>
             </div>
             
-            <h3 class = surfboard-project-subheading>------- The Design -------
+            <h3 class = subheading>------- The Design -------
             </h3>
 
             <div class = surfboard-project-body>
@@ -68,7 +82,7 @@
                 </ul>
             </div>
             
-            <h3 class = surfboard-project-subheading>------- Manufacturing -------
+            <h3 class = subheading>------- Manufacturing -------
             </h3>
 
             <div class = surfboard-project-body>
@@ -79,7 +93,7 @@
                 </p>
             </div>
 
-            <h3 class = surfboard-project-subheading>------- Deployment -------
+            <h3 class = subheading>------- Deployment -------
             </h3>
 
             <div class = surfboard-project-body>
@@ -98,7 +112,7 @@
                 </ol>
             </div>
 
-            <h3 class = surfboard-project-subheading>------- Testing -------
+            <h3 class = subheading>------- Testing -------
             </h3>
              
             <div class = surfboard-project-body>
@@ -120,12 +134,12 @@
                 </ul>
             </div>
 
-            <h3 class = surfboard-project-subheading>------- Documentation ------- </h3>
+            <h3 class = subheading>------- Documentation ------- </h3>
             <div class = surfboard-project-body>
                 <p>For a more detailed breakdown of this project, please refer to the project report here:</p>
                 <a
                     class="report-download"
-                    href="surfboard_images/surfboard_Report.pdf"
+                    href="images/surfboard/surfboard_Report.pdf"
                     download
                     >
                     Surfboard Propulsion System Report PDF
@@ -190,60 +204,163 @@
 
 <section class="project-detail" id="coaster">
     <h2>Motor Coaster</h2>
-    <div class="project-banner coaster-banner"></div>
+    <div class="muted-video project-banner-video">
+        <video class="project-banner coaster-banner" src="images/coaster/coaster_banner.webm" muted playsinline></video>
+        <button type="button" class="play-button" aria-label="Play video"></button>
+    </div>
 
     <div class="project-content">
 
         <div class="project-text">
-            <p> <strong> Overview: </strong></p>
-            <p>There’s always that one guy in our lives that forgets to use a coaster. That guy might even be you! I created a coaster that uses computer vision to detect cups or bottles that are about to be placed, and moves into position underneath them. This way, you never forget to use a coaster.
-                Opencv
-                Raspberry Pi Pico
-                Raspberry Pi Zero 2 W
-            </p>
+            <h3 class= subheading> --- What Am I Looking At? ---</h3>
+            <div class="coaster-body">
+                <p>You're looking at the world's first<strong> automatic coaster</strong>. Gone are the days of condensation stains on tables, and yelling at guests to use a coaster!
+                </p>
+                <p>
+                    Drawing inspiration from the movement system of a Roomba, the design uses two powered wheels and caster wheels for stability.
+                    This setup allowed the coaster to move quickly in a straight line, make tight turns, and rotate in place by spinning the powered wheels in opposite directions.
+                </p>
+            </div>
 
+
+                <h3 class="subheading"> --- Caster Wheel Design ---</h3>
+            <div class="coaster-body">
+                <p>
+                    My first caster-wheel prototype used <strong>two bearings:</strong> one allowed the caster to <strong>swivel</strong>, while the other sat inside the wheel hub to provide <strong>smooth rotation</strong> for the 3D-printed wheel. 
+                    During preliminary testing, I found that a single caster wasn't going to cut it. There were issues with stability causing the coaster to <strong> tip over</strong>, as well as issues with the swivel when turning 360 degrees.
+                </p>
+                <p>
+                    I replaced the single caster with <strong>two ball casters</strong> positioned on opposite sides of the housing. 
+                    This change <strong>improved stability</strong> and <strong>eliminated the tilt and turning issues</strong> caused by the original swivel mechanism.
+
+                </p>
+            </div>
+            <h3 class="subheading"> -----  Housing Design -----</h3>
+
+            <div class = "coaster-body">
+                <p>
+                    The main housing was designed in Onshape and 3D printed using the Bambu Lab P1S. Some of the design specs include:
+                </p>
+            </div>
+
+            <div class = "surfboard-project-bullets">
+                <ul>
+                    <li> <strong>4" diameter</strong>, close to the size of a standard coaster </li>
+                    <li> Two central extrusions <strong>0.675" tall</strong> serve as mounting points for the electric motors </li>
+                    <li> <strong>0.82" gap</strong> between motor extrusions to allow space for the battery housing</li>                            
+                    <li> Two <strong>0.79" tall extrusions</strong> at the front and rear secure the ball casters. </li>
+
+                </ul>
+
+            </div>
+
+            <div class = "coaster-body">
+                <p> The wheel and caster mount dimensions were carefully calculated to ensure that the lowest point of each wheel sat on the same plane to minimize tilt.
+                    Each caster was screwed and secured into thier respective mounts.
+                </p>
+
+            </div>
+            
+            <h3 class= subheading> ----- Electronics -----</h3>
+            <div class = "space"> </div>
+
+            <div class = "surfboard-project-bullets">
+                <li> <strong> Raspberry Pi Pico W: </strong> Microcontroller with strong performance, compact form factor, and wifi communication </li>
+                    <li> <strong> DC Motors and Motor Controller: </strong> Powers the movement of the wheels in response to control signals </li>
+                    <li> <strong> 18650 Lithim Ion Battery: </strong> Rechargable battery cell that powers the entire system </li>
+            </div>
+
+            <div class = "coaster-body">
+                <p>
+                    During early testing, I mounted a webcam to a selfie stick above the coaster to provide an overhead view for image processing.
+                    This setup allowed me to develop and evaluate the coaster’s visual tracking and navigation system before creating a more permanent camera installation.
+                </p>
+            </div>
+
+            <h3 class= subheading> ----- Algorithms -----</h3>
+            <div class="coaster-body">
+                <p>
+                    The system uses a bird’s-eye camera and a computer-vision algorithm written in <strong>Python</strong> with <strong>OpenCV</strong>. 
+                    Because most cups and bottles have circular openings, the algorithm detects new circular objects entering the camera’s frame while ignoring objects that were already present.
+                </p>
+                <p> An <strong>ArUco marker</strong> mounted on the coaster allows the camera to determine its position in pixel coordinates. 
+                    The camera then calculates the approximate positional error between the coaster and its target and sends steering commands to the coaster over Wi-Fi. 
+                    A <strong>proportional control system</strong> continuously adjusts the coaster’s trajectory, allowing it to reach the target quickly and accurately.
+                </p>
+            </div>
+
+            <h3 class = "subheading"> ----- Testing -----</h3>
+            <div class = "coaster-body">
+            <p>
+                To test the design concept, I placed the coaster at the upper-right corner of a <strong> 4 × 3 ft table. </strong>
+                Throughout testing, I <strong>adjusted the proportional controller’s gain (K)</strong> to minimize wheel slippage and reduce both translational and rotational overshoot.
+            </p>
+            <p>
+                When a bottle was held above the center of the table, the coaster took approximately <strong> four seconds </strong> to move into position underneath it. 
+                These results successfully demonstrate the concept, but further tuning is needed to improve its speed and responsiveness. 
+                The ultimate goal is for the coaster to arrive before the user is ready to set down their drink, eliminating any noticeable waiting time.
+            </p>
+            </div>
+
+            <h3 class = "subheading"> ----- V2 Concept -----</h3>
+            <div class = "coaster-body">
+                <p> 
+                    To eliminate the bulky external overhead camera, the second version of the coaster will be completely self-contained. 
+                    Covering the area around the coaster with multiple cameras would require excessive processing, while continuously rotating a single camera would be disruptive or inefficient. My proposed solution is as follows:
+                </p>
+            </div>
+
+            <div class="surfboard-project-bullets">
+                <li> <strong> Raspberry Pi Zero 2W:</strong> Stronger processing power with small enough form factor </li>
+                <li> <strong> Onboard Camera: </strong> Captures visual data for cup/bottle recognition</li>
+                <li> <strong> Passive Infrared (PIR) Sensors: </strong> Detect motion of heat and provide 360-degree coverage </li>
+                <li> <strong> Time-of-Flight (ToF) Sensor: </strong> Measures distance to objects with high accuracy </li>
+            </div>
+
+            <div class="coaster-body">
+            <p>
+                When a user prepares to set down a cup, the PIR sensors will detect the movement of their warm arm. 
+                The triggered sensor will indicate its approximate direction, allowing the coaster to rotate toward it. 
+                The camera will then use a YOLO object-detection algorithm to confirm that the user is holding a cup. 
+                Once confirmed, the ToF sensor will measure the distance to the cup as the coaster moves toward it.
+            </p>
         </div>
+    </div>
 
         <div class="project-media">
             <img class = "img-coaster_concept" src="images/coaster/coaster_concept.png">
-            <img class="img-coaster_breadboard" src="images/coaster/coaster_breadboard.jpg">
             <img class="img-coaster_caster_wheel" src="images/coaster/coaster_caster_wheel.png">
-            <img class = "img-coaster_housing_real" src="images/coaster/coaster_housing_real.png"> 
             <img class="img-coaster_caster_wheel_breakdown" src ="images/coaster/coaster_caster_wheel_breakdown.png">
-            <img class="img-coaster_real" src="images/coaster/coaster_real.jpg">
-            <video 
-             class = "img-coaster_movement"
-                autoplay
-                loop
-                muted
-                playsinline
-                controls
-            >
-                <source 
-                src = "images/coaster/coaster_movement.webm" type="video/webm">
-                type="video/webm"
-                >
-            </video>
-
-            <img class= "img-coaster_connections" src="images/coaster/coaster_connections.png">
-            <img class= "img-coaster_concept_ball_caster" src="images/coaster/coaster_concept_ball_caster.png">
-            <img class= "img-coaster_ball_caster_measurements" src="images/coaster/coaster_ball_caster_measurements.png">
             <img class="img-coaster_caster_ball" src="images/coaster/coaster_caster_ball.png">
+            <img class= "img-coaster_concept_ball_caster" src="images/coaster/coaster_concept_ball_caster.png">
+            <img class = "img-coaster_drawing" src="images/coaster/coaster_drawing.png">
+            <img class = "img-coaster_housing_real" src="images/coaster/coaster_housing_real.png">
+            <img class="img-coaster_real" src="images/coaster/coaster_real.jpg">
+
+            <div class="muted-video">
+                <video class="project-video img-coaster_camera" src="images/coaster/coaster_camera.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+
             <img class= "img-coaster_camera_concept" src="images/coaster/coaster_camera_concept.png">
-
-            <video class = "img-coaster_camera"
-                autoplay
-                loop
-                muted
-                playsinline
-                >
-                <source src = "images/coaster/coaster_camera.webm" type="video/webm">
-            </video>
-
             <img class="img-coaster_aruco" src="images/coaster/coaster_aruco.png">
-            <img class = "img-coaster_new_concept" src="images/coaster/coaster_new_concept.png">
 
-        </div>
+            <div class="muted-video">
+                <video class="project-video img-coaster_algorithm" src="images/coaster/coaster_algorithm.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+            <h3 class="descriptor"> Overshoot example</h3>
+            <div class="muted-video full-width-video">
+                <video class = "project-video img-coaster_overshoot" src="images/coaster/coaster_overshoot.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+            <h3 class="descriptor"> Testing after tuning</h3>
+            <div class = "muted-video full-width-video">
+                <video class = "project-video img-coaster_test" src="images/coaster/coaster_test.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+
+            <img class="img-coaster_new_concept" src="images/coaster/coaster_new_concept.png">
 
     </div>
 
@@ -255,32 +372,138 @@
 
 <section class="project-detail" id="dice">
     <h2>Dice Rolling Robot</h2>
-    <div class="project-banner dice-banner"></div>
+        <div class="muted-video project-banner-video">
+            <video class="project-banner img-dice_banner" src="images/dice/dice_banner.webm" muted playsinline></video>
+            <button type="button" class="play-button" aria-label="Play video"></button>
+        </div>
 
-    <div class="project-content">
-        
-        <div class="project-text">
-            <p>Designed after the character ‘Bender’ from the show Futarama, this robot serves as an interactive alternative to traditional dice that reacts to a user’s dice roll and outputs a personalized audio file. 
-                This robot was developed as a birthday gift to my friend. 
-                I finished the project in 3 weeks. 
-                I modeled the robot in onshape, custom designing the parts.
-                Materials:
-                LCD Touchscreen
-                Arduino Uno
-                Servo Motors
-            </p>
+        <div class="project-content">
+            <div class="project-text">
+            <h3 class="subheading"> --- What's going on here? ---</h3>
+            
+                <div class = "dice-body">
+                    <p>
+                    This little guy is the <em><strong>RAPHAN ROBOT</strong></em>. 
+                    Modeled after Bender from the show Futurama, he serves as an interactive alternative to traditional dice. 
+                    He digitally rolls the dice on his built-in LCD touchscreen and reacts to each result with a silly voice line—perfect for game nights and board games. 
+                    I developed this project in just three weeks as a birthday gift for my friend, Raph.
+                    </p>
+                </div>
+
+                <h3 class= subheading> --- The Design ---</h3>
+                
+                <div class="dice-body">
+                    <p>
+                        Each component of the RAPHAN ROBOT was designed around the specific electronics it needed to house. 
+                        I modeled every piece in Onshape with assembly and troubleshooting in mind. 
+                        The components are modular, allowing them to be easily connected, removed, and reassembled. 
+                        Once finalized, they were 3D-printed using a Bambu Lab P1S. 
+                    </p>
+
+                    <p>
+                        The robot consists of three main sections:
+                    </p>
+                </div>
+
+            <ul class="parts-list">
+                <li>
+                    <strong>The Head</strong>
+
+                    <ul class="description-list">
+                        <li>Houses the display, power source, and audio output.</li>
+                        <li>Includes a frame that firmly holds the <strong>4" x 2" display</strong></li>
+                        <li>Rotates from side to side</li>
+                        <li>Allows wiring to pass from the screen into the body</li>
+                        
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>The Arms</strong>
+
+                    <ul class="description-list">
+                        <li>Designed with a central enclosure, precisely sized to securely house a servo measuring <strong>1.6" x 0.2"</strong></li>
+                        <li>Uses built-in pegs for easy attachment and removal to the chest housing</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <strong>The Chest Housing</strong>
+
+                    <ul class="description-list">
+                        <li>Houses the robot’s main electronics.</li>
+                        <li>Fits the main components in a central frame. </li>
+                        <li>Includes a hinged door for easy access to the wiring</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class = "space"></div>
+            <h3 class= subheading> --- Electronics ---</h3>
+            <div class = "space"></div>
+
+            <div class = "surfboard-project-bullets">
+                <ul>
+                    <li> <strong>Arduino Uno:</strong> The project’s main microcontroller.</li>
+                    <li><strong>Breadboard:</strong> Kept the wiring organized and easily accessible within the spacious chest housing. </li>
+                    <li><strong>Servo:</strong> Controls the head’s left-and-right movement.</li>
+                    <li><strong>DFPlayer Mini and Speaker:</strong> Plays audio files stored on a microSD card. 
+                    The files contained personalized voice recordings from each of Raph's friends. Each file was edited with sound effects using <em>Audacity</em>.</li>
+                    <li><strong>LCD Touchscreen:</strong> Served as the robot’s main interface, allowing the user to digitally roll the dice.</li>
+                </ul>
+            </div>
+
+            <h3 class= subheading> ----- Testing -----</h3>
+            <div class="dice-body">
+                <p>
+                    During preliminary testing, I encountered several startup issues. 
+                    The robot repeatedly rebooted before completing its initialization sequence, which tested all of its systems simultaneously. 
+                    At the time, it was powered by four 1.5 V AA batteries.
+                </p>
+                <p>
+                    To diagnose the problem, I tested each subsystem independently until I could consistently reproduce the failure. 
+                    I discovered that the servo’s high current draw was causing the system voltage to drop, resulting in a brownout. 
+                    I replaced the AA batteries with two rechargeable 18650 lithium-ion cells, which provided the current capacity needed to power the system reliably. 
+                </p>
+                <p>
+                    After the upgrade, the robot completed its startup sequence consistently. 
+                    It accurately generated and displayed dice rolls, then played the corresponding voice line for each result. 
+                    Once testing was complete, the robot made its debut during one of Raph’s board-game nights.
+                </p>
+            </div>
         </div>
 
         <div class="project-media">
+            <img class="img-dice_concept" src="images/dice/dice_concept.jpg">
+            <img class="img-dice_bender" src="images/dice/dice_bender.jpg">
+            <img class="img-dice_helm_CAD" src="images/dice/dice_helm_CAD.png">
+            <img class = "img-dice_servo_CAD" src="images/dice/dice_servo_CAD.png">
+            <img class="img-dice_housing_CAD" src="images/dice/dice_housing_CAD.png">
 
-            <img class="img-dice" src="images/dice/dice_bender.jpg">
-            <img class="img-dice" src="images/dice/dice_concept.jpg">
-            <img class="img-dice" src="images/dice/dice_housing_CAD.png">
-            <img class="img-dice" src="images/dice/dice_housing_real.jpg">
-            <img class="img-dice" src="images/dice/dice_servo.jpg">
-            <img class="img-dice" src="images/dice/dice_heart.jpg">
-            <img class="img-dice" src="images/dice/dice_head.jpg">
+            <img class="img-dice_housing_real" src="images/dice/dice_housing_real.jpg">
+            <img class="img-dice_servo" src="images/dice/dice_servo.jpg">
+            <img class="img-dice_heart" src="images/dice/dice_heart.jpg">
 
+            <div class = "muted-video">
+                <video class = "project-video img-dice_testing_rotate" src="images/dice/dice_testing_rotate.webm" playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+
+
+            <img class="img-dice_head" src="images/dice/dice_head.jpg">
+            
+
+            <div class = "muted-video">
+                <video class = "project-video img-dice_rolling" src="images/dice/dice_rolling.webm" playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+
+            <div class="muted-video full-width-video">
+                <video class = "project-video img-dice_bot_final" src="images/dice/dice_bot_final.webm" playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
+
+     
         </div>
             
     </div>
@@ -297,15 +520,28 @@
     <div class="project-content">
         <div class="project-text">
             
-            <p> <strong> Overview: </strong></p>
-            <p>Video games are fun, but what's the real consequence of losing? Restarting a level? Losing your inventory? No matter what, the punishment stays inside the game. I wanted to change that by creating a system that brings the consequences into the real world. 
-                    Inspired by Michael Reeves "The Robot That Shines a Laser in Your Eye," I designed and built a face-tracking turret that detects the player's face and fires a Nerf gun whenever they die in the notoriously difficult game Elden Ring. This was one of my first projects involving electronics, embedded systems, and computer vision, so it pushed me well outside my comfort zone and taught me a great deal about integrating hardware and software into a working system.
-                    Coded in Python, utilizing opencv and Optical Character Recognition
-                    Ran on an Arduino Uno
-                    Webcam
-                    Servo Motors
-                    After finishing the first version of the project in 2023, I decided to revisit the design and build a second iteration. Using Onshape for CAD and 3D printing custom components, I was able to solve many of the stability and assembly issues present in the original prototype. The first version was held together with hot glue and a lot of hope, so this redesign was a huge improvement in both reliability and overall build quality.
-            </p>
+            <h3 class="subheading"> -- What's this supposed to be? -- </h3>
+            <p>
+                </p>
+
+                        <h3 class= subheading> --- The Design ---</h3>
+            <div class="coaster-body">
+                <p>
+                </p>
+            </div>
+
+            <h3 class= subheading> --- Testing ---</h3>
+            <div class = "coaster-body">
+                <p>
+
+                </p>
+            </div>
+
+            <h3 class= subheading> --- Version 2 ---</h3>
+            <div class="coaster-body">
+                <p>
+                </p>
+            </div>
         </div>
         
         <div class="project-media">
@@ -314,15 +550,24 @@
 
             <img class="img-targeting_face" src="images/targeting/targeting_face.png">
 
-            <video class="img-targeting_tracking" src="images/targeting/targeting_tracking.webm" autoplay muted loop playsinline></video>
+            <div class="muted-video targeting-tracking-video">
+                <video class="project-video img-targeting_tracking" src="images/targeting/targeting_tracking.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
 
             <img class="img-targeting_code" src ="images/targeting/targeting_code.png">
                      
-            <video class="img-targeting_pan" src="images/targeting/targeting_pan.webm" autoplay muted loop playsinline></video>
+            <div class="muted-video targeting-pan-video">
+                <video class="project-video img-targeting_pan" src="images/targeting/targeting_pan.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
 
             <img class = "img-targeting_gun" src="images/targeting/targeting_gun.png">
 
-            <video class = "img_targeting_shoot" src="images/targeting/targeting_shoot.webm" autoplay muted loop playsinline></video>
+            <div class="muted-video">
+                <video class="project-video img-targeting_shoot" src="images/targeting/targeting_shoot.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
 
                 <div class="title-item">
                     <h3>Version Two</h3>
@@ -340,7 +585,10 @@
 
             <img class = "img-targeting_2" src="images/targeting/targeting_2.png">
 
-            <video class = "img-targeting_2motion" src="images/targeting/targeting_2motion.webm" autoplay muted loop playsinline></video>
+            <div class="muted-video">
+                <video class="project-video img-targeting_2motion" src="images/targeting/targeting_2motion.webm" muted playsinline></video>
+                <button type="button" class="play-button" aria-label="Play video"></button>
+            </div>
 
         </div>
 
@@ -351,5 +599,6 @@
 <!-- AUTONOMOUS TARGETING SYSTEM END -->
 
 </main>
+<script src="script.js"></script>
 </body>
 </html>
