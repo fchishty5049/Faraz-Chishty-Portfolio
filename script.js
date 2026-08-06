@@ -1,5 +1,10 @@
 const cards = document.querySelectorAll(".project-card");
 
+// Keep videos with sound at a comfortable default volume.
+document.querySelectorAll("video:not([muted])").forEach((video) => {
+  video.volume = 0.2;
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
