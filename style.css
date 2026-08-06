@@ -1422,7 +1422,7 @@ iframe {
 /* Keep wide layouts centered without shifting media outside the viewport. */
 @media (min-width: 1201px) {
   .hero-content {
-    max-width: 1500px;
+    max-width: 1650px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1439,45 +1439,49 @@ iframe {
 
 @media (min-width: 1351px) {
   .hero-content {
-    width: 100%;
-    max-width: 1500px;
-    grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+    width: min(100%, 1650px);
+    max-width: 1650px;
+    grid-template-columns: 750px minmax(0, 1fr);
+    gap: 0;
     margin: auto auto 2rem;
   }
 
   .hero-img {
-    transform: none;
+    transform: translate(150px, 32px);
   }
 
   .hero-img img {
-    width: min(100%, 750px);
-    max-width: 100%;
+    width: 750px;
+    max-width: none;
+    max-height: none;
   }
 
   .hero-text {
-    transform: none;
+    transform: translateX(20px);
   }
 }
 
 @media (min-width: 851px) and (max-width: 1350px) {
   .hero-content {
+    --hero-image-width: min(58vw, 750px);
     width: 100%;
     max-width: 100%;
-    grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
-    gap: clamp(1rem, 3vw, 3rem);
+    grid-template-columns: minmax(0, calc(100% - 260px)) minmax(260px, 1fr);
+    gap: 0;
   }
 
   .hero-img {
-    transform: none;
+    transform: translate(clamp(30px, 8vw, 110px), 32px);
   }
 
   .hero-img img {
-    width: min(100%, 650px);
+    width: var(--hero-image-width);
     max-width: 100%;
+    max-height: none;
   }
 
   .hero-text {
-    transform: none;
+    transform: translateX(clamp(0px, 1.5vw, 20px));
   }
 }
 
