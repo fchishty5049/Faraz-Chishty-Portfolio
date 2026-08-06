@@ -1,35 +1,3 @@
-const desktopPointer = window.matchMedia("(hover: hover) and (pointer: fine)");
-
-function lockDesktopProjectLayout() {
-  const projectPage = document.querySelector(".project-details-page");
-
-  if (!projectPage || !desktopPointer.matches) return;
-
-  /*
-    screen.availWidth uses CSS pixels, so Windows display scaling is already
-    accounted for. The small allowance prevents the vertical scrollbar and
-    browser frame from creating horizontal overflow at 100% browser zoom.
-  */
-  const availableDesktopWidth = Math.min(
-    screen.availWidth,
-    window.outerWidth || screen.availWidth
-  );
-  const layoutWidth = Math.max(900, Math.floor(availableDesktopWidth - 24));
-  const layoutPadding = Math.min(124, Math.max(32, layoutWidth * 0.07));
-
-  document.documentElement.style.setProperty(
-    "--project-layout-width",
-    `${layoutWidth}px`
-  );
-  document.documentElement.style.setProperty(
-    "--project-layout-padding",
-    `${layoutPadding}px`
-  );
-  document.documentElement.classList.add("desktop-project-layout");
-}
-
-lockDesktopProjectLayout();
-
 const cards = document.querySelectorAll(".project-card");
 
 const observer = new IntersectionObserver(

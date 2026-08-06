@@ -141,12 +141,12 @@ a {
 }
 
 .hero-content {
-  --hero-image-width: 750px;
-
   display: grid;
-  grid-template-columns: var(--hero-image-width) 1fr;
+  grid-template-columns: minmax(0, 1.15fr) minmax(16rem, 0.85fr);
   align-items: center;
+  gap: clamp(1.5rem, 4vw, 5rem);
   width: 100%;
+  max-width: 1500px;
   margin: auto auto 2rem;
 }
 
@@ -154,20 +154,19 @@ a {
   display: flex;
   justify-content: center;
   min-width: 0;
-  transform: translate(150px, 32px);
 }
 
 .hero-img img {
   display: block;
-  width: var(--hero-image-width);
-  max-width: none;
+  width: min(100%, 750px);
+  max-width: 100%;
+  max-height: min(72vh, 780px);
   height: auto;
   object-fit: contain;
 }
 
 .hero-text {
   min-width: 0;
-  transform: translateX(20px);
 }
 
 .eyebrow {
@@ -526,6 +525,9 @@ footer {
     padding: 5rem 7vw;
     display: grid;
     gap: 2rem;
+    width: 100%;
+    max-width: 1800px;
+    margin-inline: auto;
 }
 
 .project-details-page .project-detail {
@@ -557,7 +559,7 @@ footer {
 
 .project-banner {
     width: 100%;
-    height: 460px;
+    height: 100%;
     border-radius: 1rem;
     margin-bottom: 2rem;
 
@@ -575,27 +577,31 @@ footer {
 
 .surfboard-banner {
     width: 100%;
-    height: 480px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
 .coaster-banner {
     width: 100%;
-    height: 460px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
 .img-dice_banner {
     width: 100%;
-    height: 460px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     display: block;
 }
 
 .targeting-banner{
   background-image: url('./images/targeting/targeting_banner.gif');
+  aspect-ratio: 16 / 9;
+  height: auto;
+  background-size: contain;
+  background-color: #050507;
 }
 
 /* Project Detail Layouts  Columns*/
@@ -921,12 +927,20 @@ height: 210px;
 
 .project-banner-video {
   width: 100%;
-  height: 460px;
+  height: auto;
+  max-height: none;
   margin-bottom: 2rem;
+  overflow: visible;
+  border-radius: 1rem;
+  background: #050507;
 }
 
 .project-banner-video .project-banner {
+  width: 100%;
+  height: auto;
+  max-height: none;
   margin-bottom: 0;
+  object-fit: contain;
 }
 
 .full-width-video {
@@ -1135,8 +1149,8 @@ height: 210px;
 .bottom-media > img.bottom-image {
   flex: 0 0 auto;
   width: 300px;
-  height: 310px;
-  max-width: 400px;
+  height: auto;
+  max-width: 100%;
   object-fit: cover;
   border-radius: 1rem;
 }
@@ -1405,10 +1419,10 @@ iframe {
   }
 }
 
-/* Preserve the original 100% desktop composition when zooming out. */
+/* Keep wide layouts centered without shifting media outside the viewport. */
 @media (min-width: 1201px) {
   .hero-content {
-    max-width: 1650px;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1425,47 +1439,45 @@ iframe {
 
 @media (min-width: 1351px) {
   .hero-content {
-    --hero-image-width: 750px;
-    width: min(100%, 1650px);
-    max-width: 1650px;
-    grid-template-columns: var(--hero-image-width) minmax(0, 1fr);
+    width: 100%;
+    max-width: 1500px;
+    grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
     margin: auto auto 2rem;
   }
 
   .hero-img {
-    transform: translate(150px, 32px);
+    transform: none;
   }
 
   .hero-img img {
-    width: var(--hero-image-width);
-    max-width: none;
+    width: min(100%, 750px);
+    max-width: 100%;
   }
 
   .hero-text {
-    transform: translateX(20px);
+    transform: none;
   }
 }
 
 @media (min-width: 851px) and (max-width: 1350px) {
   .hero-content {
-    --hero-image-width: min(58vw, 750px);
     width: 100%;
     max-width: 100%;
-    grid-template-columns: minmax(0, 58vw) minmax(260px, 1fr);
-    gap: 0;
+    grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.9fr);
+    gap: clamp(1rem, 3vw, 3rem);
   }
 
   .hero-img {
-    transform: translate(clamp(30px, 8vw, 110px), 32px);
+    transform: none;
   }
 
   .hero-img img {
-    width: var(--hero-image-width);
+    width: min(100%, 650px);
     max-width: 100%;
   }
 
   .hero-text {
-    transform: translateX(clamp(0px, 1.5vw, 20px));
+    transform: none;
   }
 }
 
@@ -1487,108 +1499,25 @@ iframe {
   }
 }
 
-/* DESKTOP ZOOM LOCK ------------------------------------------------
-   script.js supplies these values in CSS pixels after accounting for
-   operating-system display scaling. The class is never added on mobile.
-*/
-
-html.desktop-project-layout,
-html.desktop-project-layout body {
-  overflow-x: auto;
+/* Project galleries retain their intentional per-image crop heights. */
+.project-detail .project-media {
+  align-items: start;
 }
 
-html.desktop-project-layout .project-details-page {
-  width: var(--project-layout-width);
-  min-width: var(--project-layout-width);
-  max-width: none;
-  margin-inline: auto;
-  padding: 5rem var(--project-layout-padding);
-}
-
-html.desktop-project-layout .project-content,
-html.desktop-project-layout .project-media {
-  width: 100%;
-  max-width: 100%;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-html.desktop-project-layout .project-details-page .project-detail {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
-  overflow: visible;
-}
-
-/* FINAL RESPONSIVE HOME HERO ---------------------------------------
-   These rules intentionally come last so they replace the older fixed
-   widths and translate offsets above.
-*/
-
-.hero {
-  min-height: min(100svh, 900px);
-  padding: 2rem clamp(1rem, 7vw, 8rem) 0;
-}
-
-.hero-content {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(300px, 1.1fr);
-  align-items: center;
-  gap: clamp(1rem, 4vw, 5rem);
-  width: min(100%, 1650px);
-  max-width: 1650px;
-  margin: auto auto 2rem;
-}
-
-.hero-img,
-.hero-text {
-  min-width: 0;
-  transform: none;
-}
-
-.hero-img {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-img img {
+/* Banner videos are the exception: always show the complete video frame. */
+.project-detail .project-banner-video video {
   display: block;
-  width: clamp(420px, 42vw, 750px);
+  width: 100%;
   max-width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+.project-detail .project-banner-video {
+  aspect-ratio: auto;
   height: auto;
-  object-fit: contain;
-}
-
-.hero-text h2 {
-  font-size: clamp(2.5rem, 4vw, 4rem);
-}
-
-@media (max-width: 1200px) {
-  .hero-content {
-    grid-template-columns: minmax(320px, 1fr) minmax(260px, 0.8fr);
-  }
-
-  .hero-img img {
-    width: clamp(380px, 50vw, 650px);
-  }
-}
-
-@media (max-width: 850px) {
-  .hero {
-    min-height: auto;
-    padding: 2rem clamp(1rem, 5vw, 3rem) 3rem;
-  }
-
-  .hero-content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
-    margin: 2rem auto 0;
-  }
-
-  .hero-img img {
-    width: min(100%, 520px);
-  }
-
-  .hero-text {
-    text-align: center;
-  }
+  max-height: none;
+  overflow: visible;
 }
