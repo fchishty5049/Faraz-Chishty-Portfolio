@@ -14,16 +14,37 @@ const observer = new IntersectionObserver(
 cards.forEach((card) => observer.observe(card));
 
 const topNav = document.querySelector("#top-nav");
-const navScrollLimit = 600;
+
+let previousScrollPosition = window.scrollY;
+let upwardDistance = 0;
+
+const navHidePoint = 600;
+const navShowDistance = 80;
 
 window.addEventListener("scroll", () => {
   if (!topNav) return;
 
-  if (window.scrollY > navScrollLimit) {
-    topNav.classList.add("nav-hidden");
-  } else {
+  const currentScrollPosition = window.scrollY;
+  const scrollDifference = previousScrollPosition - currentScrollPosition;
+
+  if (currentScrollPosition <= navHidePoint) {
+    // Always show the navigation near the top.
     topNav.classList.remove("nav-hidden");
+    upwardDistance = 0;
+  } else if (scrollDifference > 0) {
+    // The user is scrolling upward.
+    upwardDistance += scrollDifference;
+
+    if (upwardDistance >= navShowDistance) {
+      topNav.classList.remove("nav-hidden");
+    }
+  } else if (scrollDifference < 0) {
+    // The user is scrolling downward.
+    upwardDistance = 0;
+    topNav.classList.add("nav-hidden");
   }
+
+  previousScrollPosition = currentScrollPosition;
 });
 
 document.querySelectorAll(".muted-video").forEach((wrapper) => {

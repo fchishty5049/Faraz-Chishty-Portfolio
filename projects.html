@@ -10,12 +10,11 @@
 
 <body>
     <nav class="top-nav" id="top-nav">
-        <a class="nav-logo" href="index.html">Faraz Chishty</a>
 
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="projects.html">Projects</a>
-        <a href="images/resume.pdf" target="_blank">Resume</a>
+        <a href="images/Faraz Chishty Resume.pdf" target="_blank">Resume</a>
         </div>
     </nav>
 
@@ -181,7 +180,8 @@
         <div class="media-item">
             <h3>Underwater Testing</h3>
 
-            <img class="img-testing" src="images/surfboard_motion.gif">
+            <video class="img-testing" src="images/surfboard_motion.webm" autoplay muted loop playsinline>
+            </video>
         </div>
 
         <div class="media-item">
@@ -521,30 +521,78 @@
         <div class="project-text">
             
             <h3 class="subheading"> -- What's this supposed to be? -- </h3>
-            <p>
+            <div class="targeting-body">
+                <p>
+                    I know you're looking at the CAD model of a weapon strapped to a camera in concern, but hear me out! 
+                    It may sound a little unconventional, but this is my autonomous targeting system— a playful project that connects digital gameplay with the physical world. 
+                    When the system detects that a player has died in a video game, it responds in real time by firing a harmless foam projectile from a nerf blaster. 
+                    The result is a fun, unexpected, and tangible consequence for losing.
+                </p>
+            </div>
+
+            <h3 class= subheading> --- The Design ---</h3>
+            <div class="targeting-body">
+                <p>
+                    First, I tackled the challenge of determining when a player had lost the game.
+                    I developed a Python script that monitors the player’s screen and uses <strong>optical character recognition (OCR)</strong> to detect phrases commonly displayed on death screens, such as “You Died.”
+                    Once the phrase is recognized, the script sends a signal to activate the targeting system.
                 </p>
 
-                        <h3 class= subheading> --- The Design ---</h3>
-            <div class="coaster-body">
-                <p>
+                <p> The system uses two servo motors to control movement along the horizontal and vertical axes. 
+                    During initial testing, I mounted a low-power laser pointer to the servo assembly to visualize its direction and calibrate its range of motion. 
+                </p>
+
+                <p> Using <strong>Python</strong> and <strong>OpenCV</strong>, I connected an external web camera and implemented real-time facial detection and tracking. 
+                    The software identifies a participant’s position within the video frame, converts the pixel coordinates into servo angles, and adjusts the mechanism to follow their movement. 
+                </p>
+
+                <p> 
+                    I then replaced the laser pointer with a Nerf-style foam blaster. 
+                    A third servo operates the trigger using a repurposed keyboard spacebar as a lever arm, translating the servo’s rotation into enough force to pull the trigger once the system confirms a stable target lock. 
                 </p>
             </div>
 
             <h3 class= subheading> --- Testing ---</h3>
-            <div class = "coaster-body">
+            <div class = "targeting-body">
                 <p>
-
+                    The system successfully identified the death screen in 100% of the tests and activated the targeting sequence.
+                    After the camera identified a target, the system fired within three seconds.
+                    At a distance of three feet, the system hit its target approximately 90% of the time.
+                    Accuracy gradually decreased as the distance from the target increased.
+                    This decline was partly caused by instability in the servo linkage, as the prototype was held together using hot glue. 
                 </p>
             </div>
 
             <h3 class= subheading> --- Version 2 ---</h3>
-            <div class="coaster-body">
+            <div class="targeting-body">
                 <p>
+                    A year later, I revisited the project to improve its mechanical stability and targeting accuracy.
+                    I replaced the original hot-glued structure with custom 3D-printed components.
+                    After precisely measuring each servo, I designed friction-fit mounts that held them securely in place.
                 </p>
+
+                <p>
+                    The components interlocked like puzzle pieces, forming a sturdy and modular assembly.
+                    This reinforced foundation prevented the targeting mechanism from leaning or shifting during operation, resulting in more consistent accuracy.
+                </p>
+
+                <p>
+                    To secure the servo assembly to the Nerf blaster, I designed a custom mounting arm with two precisely positioned connection points.
+                    These points fit into existing holes that were originally intended to hold extra darts.
+                    Repurposing the holes created a stable attachment without requiring permanent modifications to the blaster.
+                </p>
+
+                <p>
+                    Overall, this was a fun way to combine my interests in programming, computer vision, and mechanical design.
+                    Coming back to the project a year later gave me the chance to fix its biggest weaknesses and see how much my design skills had improved.
+                </p>
+
             </div>
         </div>
         
         <div class="project-media">
+
+            <img class = "img-targeting_overview" src="images/targeting/targeting_overview.JPG">
 
             <img class="img-targeting_died" src="images/targeting/targeting_died.jpeg">
 
@@ -554,8 +602,6 @@
                 <video class="project-video img-targeting_tracking" src="images/targeting/targeting_tracking.webm" muted playsinline></video>
                 <button type="button" class="play-button" aria-label="Play video"></button>
             </div>
-
-            <img class="img-targeting_code" src ="images/targeting/targeting_code.png">
                      
             <div class="muted-video targeting-pan-video">
                 <video class="project-video img-targeting_pan" src="images/targeting/targeting_pan.webm" muted playsinline></video>
@@ -583,16 +629,33 @@
 
             <img class = "img-targeting_box" src="images/targeting/targeting_box.png">
 
-            <img class = "img-targeting_2" src="images/targeting/targeting_2.png">
-
-            <div class="muted-video">
-                <video class="project-video img-targeting_2motion" src="images/targeting/targeting_2motion.webm" muted playsinline></video>
-                <button type="button" class="play-button" aria-label="Play video"></button>
-            </div>
-
         </div>
 
+
+
     </div>
+
+<div class="bottom-media">
+  <img
+    class="bottom-image"
+    src="images/targeting/targeting_2.png"
+    alt="Final targeting system">
+
+  <div class="muted-video bottom-video">
+    <video
+      class="project-video"
+      src="images/targeting/targeting_2motion.webm"
+      muted
+      playsinline>
+    </video>
+
+    <button
+      type="button"
+      class="play-button"
+      aria-label="Play video">
+    </button>
+  </div>
+</div>
 
 </section>
 

@@ -277,11 +277,18 @@ a {
   z-index: 1;
 }
 
-.project-gallery img {
+.project-gallery img,
+.project-gallery video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.project-gallery video {
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Red/dark overlay over the images */
@@ -331,9 +338,9 @@ a {
   color: #fff;
 }
 
-/* Shared project card GIF hover behavior
+/* Shared project card animated-preview hover behavior
    - Side still images show by default.
-   - Side animated GIFs fade in on card hover.
+   - Side animated videos fade in on card hover.
    - The red gradient and diagonal stripe overlay fade out on card hover.
    This is the same behavior originally used on the dice roller card,
    now applied to every project card that uses the gallery-left/right classes.
@@ -710,6 +717,15 @@ footer {
   margin-bottom: 0.35rem;
 }
 
+.targeting-body {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-indent: 2rem;
+}
+
+
 /* Individual image classes : SURFBOARD-----------------------------------------------------------------*/
 
 .img-subsystems {
@@ -928,7 +944,7 @@ height: 210px;
   grid-column: 1 / -1;
   width: 70%;
   justify-self: center;
-  margin-top: 5rem;
+  margin-top: 2.5rem;
 }
 .project-media .img-dice_servo_CAD {
   height: 250px;
@@ -942,7 +958,7 @@ height: 210px;
   height: 250px;
   width: 70%;
   justify-self: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 
 .project-media .img-dice_final_CAD {
@@ -959,7 +975,7 @@ height: 210px;
 .img-dice_head,
 .img-dice_testing_rotate,
 .img-dice_rolling {
-  height: 250px;
+  height: 220px;
 }
 
 .full-width-video .img-dice_bot_final {
@@ -1033,17 +1049,20 @@ height: 210px;
   pointer-events: none;
 }
 
+.project-media .img-targeting_overview {
+  height: 320px;
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 55%;
+}
 
 .img-targeting_died {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    height: 320px;
+    height: 220px;
 }
 
 .img-targeting_face {
   height: 220px;
   grid-column: 1;
-  grid-row: 2;
 }
 
 .img-targeting_tracking {
@@ -1077,9 +1096,11 @@ height: 210px;
   grid-row: 4 / span 2;
 }
 
-.img-targeting_CADV2 {
-  height: 320px;
+.project-media .img-targeting_CADV2 {
+  height: 220px;
   grid-column: 1 / -1;
+  width: 70%;
+  justify-self: center;
 }
 
 .img-targeting_drawing {
@@ -1098,15 +1119,66 @@ height: 210px;
   height: 220px;
 }
 
-.img-targeting_2 {
-  height: 290px;
+.bottom-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.img-targeting_2motion {
-  height: 290px;
+/* Edit the image size here */
+.bottom-media > img.bottom-image {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 310px;
+  max-width: 400px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* Edit the video size here */
+.bottom-video {
+  position: relative;
+  width: 500px;
+  height: 310px;
+}
+
+.bottom-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 /* Add future images like:
 .img-cad { grid-column: 1 / -1; height: 250px; }
 .img-render { height: 200px; }
 */
+
+/* NAV PART 2 ---------------------- */
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links a {
+  font-family: "Akira Expanded", var(--font-display), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
