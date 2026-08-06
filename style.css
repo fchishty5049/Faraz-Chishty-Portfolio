@@ -1518,3 +1518,77 @@ html.desktop-project-layout .project-details-page .project-detail {
   max-width: 100%;
   overflow: visible;
 }
+
+/* FINAL RESPONSIVE HOME HERO ---------------------------------------
+   These rules intentionally come last so they replace the older fixed
+   widths and translate offsets above.
+*/
+
+.hero {
+  min-height: min(100svh, 900px);
+  padding: 2rem clamp(1rem, 7vw, 8rem) 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(300px, 1.1fr);
+  align-items: center;
+  gap: clamp(1rem, 4vw, 5rem);
+  width: min(100%, 1650px);
+  max-width: 1650px;
+  margin: auto auto 2rem;
+}
+
+.hero-img,
+.hero-text {
+  min-width: 0;
+  transform: none;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  display: block;
+  width: clamp(420px, 42vw, 750px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-text h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+}
+
+@media (max-width: 1200px) {
+  .hero-content {
+    grid-template-columns: minmax(320px, 1fr) minmax(260px, 0.8fr);
+  }
+
+  .hero-img img {
+    width: clamp(380px, 50vw, 650px);
+  }
+}
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: auto;
+    padding: 2rem clamp(1rem, 5vw, 3rem) 3rem;
+  }
+
+  .hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto 0;
+  }
+
+  .hero-img img {
+    width: min(100%, 520px);
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
