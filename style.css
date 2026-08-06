@@ -102,7 +102,11 @@ a {
 /* HERO */
 
 .hero {
-  min-height: 100vh;
+  /*
+    Use the full viewport at normal zoom, but stop the hero from growing
+    indefinitely in CSS pixels when the browser is zoomed out.
+  */
+  min-height: min(100vh, 900px);
   padding: 2rem 7vw 0rem;
   display: flex;
   flex-direction: column;
@@ -1181,4 +1185,336 @@ height: 210px;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.06em;
+}
+
+/* RESPONSIVE SCALING ------------------------------------------------ */
+
+body {
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .hero-content {
+    --hero-image-width: clamp(320px, 52vw, 650px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+    gap: clamp(1rem, 3vw, 3rem);
+  }
+
+  .hero-img,
+  .hero-text {
+    transform: none;
+  }
+
+  .hero-img img {
+    width: min(100%, var(--hero-image-width));
+    max-width: 100%;
+  }
+
+  .project-grid {
+    width: 100%;
+  }
+
+  .project-content {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .project-media {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  body {
+    padding-top: 4.5rem;
+  }
+
+  .top-nav {
+    padding: 1rem clamp(0.75rem, 4vw, 2rem);
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    font-size: clamp(0.72rem, 2.3vw, 1rem);
+    letter-spacing: 0.03em;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 2rem clamp(1rem, 5vw, 3rem) 3rem;
+  }
+
+  .hero-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin: 2rem auto 0;
+  }
+
+  .hero-img {
+    order: 1;
+  }
+
+  .hero-img img {
+    width: min(100%, 520px);
+  }
+
+  .hero-text {
+    order: 2;
+    text-align: center;
+  }
+
+  .projects-section,
+  .skills-section,
+  .projects-hero,
+  .project-details-page {
+    padding-left: clamp(1rem, 5vw, 3rem);
+    padding-right: clamp(1rem, 5vw, 3rem);
+  }
+
+  .project-grid,
+  .project-content {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-card {
+    min-height: 0;
+  }
+
+  .project-image {
+    height: clamp(220px, 48vw, 300px);
+  }
+
+  .skill-card p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+  }
+
+  .project-surfboard-bottom {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bottom-media {
+    flex-wrap: wrap;
+  }
+
+  .bottom-media > img.bottom-image,
+  .bottom-video {
+    width: min(100%, 500px);
+    max-width: 100%;
+  }
+}
+
+/* PROJECT DETAILS ZOOM STABILITY -----------------------------------
+   Keep the desktop page on the same layout canvas used by the supplied
+   100% zoom reference. Browser zoom then scales that canvas instead of
+   recalculating the text and media column widths.
+*/
+
+.project-content,
+.project-media,
+.project-content > *,
+.project-media > * {
+  min-width: 0;
+}
+
+.project-content {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-media {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 560px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero h2 {
+    font-size: clamp(1.8rem, 10vw, 2.7rem);
+  }
+
+  .projects-section,
+  .skills-section,
+  .projects-hero,
+  .project-details-page {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .project-card,
+  .project-details-page .project-detail,
+  .skill-card {
+    border-radius: 0.9rem;
+  }
+
+  .project-image {
+    height: clamp(190px, 58vw, 260px);
+    margin: 0.75rem 0.75rem 0;
+  }
+
+  .project-info,
+  .project-details-page .project-detail,
+  .skill-card {
+    padding: 1.25rem;
+  }
+
+  .project-media,
+  .project-surfboard-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-media > *,
+  .project-surfboard-bottom > * {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .project-media img,
+  .project-media video,
+  .project-surfboard-bottom img,
+  .project-surfboard-bottom video {
+    height: clamp(220px, 65vw, 340px) !important;
+    object-fit: cover;
+  }
+
+  .bottom-media {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bottom-media > img.bottom-image,
+  .bottom-video {
+    width: 100%;
+    height: clamp(220px, 70vw, 340px);
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Preserve the original 100% desktop composition when zooming out. */
+@media (min-width: 1201px) {
+  .hero-content {
+    max-width: 1650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* HERO COMPOSITION -------------------------------------------------
+   Keep the reference desktop composition stable as the viewport or
+   browser zoom changes, then deliberately reflow it on smaller screens.
+*/
+
+.hero-text h2 span {
+  display: block;
+}
+
+@media (min-width: 1351px) {
+  .hero-content {
+    --hero-image-width: 750px;
+    width: min(100%, 1650px);
+    max-width: 1650px;
+    grid-template-columns: var(--hero-image-width) minmax(0, 1fr);
+    margin: auto auto 2rem;
+  }
+
+  .hero-img {
+    transform: translate(150px, 32px);
+  }
+
+  .hero-img img {
+    width: var(--hero-image-width);
+    max-width: none;
+  }
+
+  .hero-text {
+    transform: translateX(20px);
+  }
+}
+
+@media (min-width: 851px) and (max-width: 1350px) {
+  .hero-content {
+    --hero-image-width: min(58vw, 750px);
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 58vw) minmax(260px, 1fr);
+    gap: 0;
+  }
+
+  .hero-img {
+    transform: translate(clamp(30px, 8vw, 110px), 32px);
+  }
+
+  .hero-img img {
+    width: var(--hero-image-width);
+    max-width: 100%;
+  }
+
+  .hero-text {
+    transform: translateX(clamp(0px, 1.5vw, 20px));
+  }
+}
+
+@media (max-width: 850px) {
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-img,
+  .hero-text {
+    transform: none;
+  }
+
+  .hero-img img {
+    width: min(100%, 520px);
+    max-width: 100%;
+  }
+}
+
+/* DESKTOP ZOOM LOCK ------------------------------------------------
+   script.js supplies these values in CSS pixels after accounting for
+   operating-system display scaling. The class is never added on mobile.
+*/
+
+html.desktop-project-layout,
+html.desktop-project-layout body {
+  overflow-x: auto;
+}
+
+html.desktop-project-layout .project-details-page {
+  width: var(--project-layout-width);
+  min-width: var(--project-layout-width);
+  max-width: none;
+  margin-inline: auto;
+  padding: 5rem var(--project-layout-padding);
+}
+
+html.desktop-project-layout .project-content,
+html.desktop-project-layout .project-media {
+  width: 100%;
+  max-width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+html.desktop-project-layout .project-details-page .project-detail {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
 }
